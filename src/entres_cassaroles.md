@@ -228,7 +228,7 @@ Instructions:
 7. Cook on low heat, stir frequently.
 8. Add some jalapeno to taste and/or a can of salsa casera.
 
-### Beef Ro-Tel
+## Beef Ro-Tel
 
 Instructions:
 1. Brown stew meat that has been dredged in flour with onions and garlic and salt.

@@ -1,6 +1,6 @@
-## Egg Dishes
+# Egg Dishes
 
-### Basic Omelet
+## Basic Omelet
 
 - 2 eggs
 - 1 tablespoon milk or cream
@@ -16,7 +16,7 @@ Instructions:
 5. Shake pan slightly to see if sticking.
 6. Fold, fill, and turn or turn and top with:
 
-### Ranchero Salsa
+## Ranchero Salsa
 
 - 1/2 cup butter
 - 6 tablespoons chopped onions
@@ -29,7 +29,7 @@ Instructions:
 - 2 cubes chicken bouillon
 - 1 cup boiling water
 
-### Shrimp Filling
+## Shrimp Filling
 
 - 1 cup boiled shrimp
 - 1/3 cup chopped shallots
@@ -39,7 +39,7 @@ Instructions:
 1. Sauté shrimp and shallots and add tomatoes.
 2. Simmer for 10 minutes.
 
-### Crab Filling
+## Crab Filling
 
 - 1/3 cup crab meat
 - 1/3 cup shallots
@@ -47,7 +47,7 @@ Instructions:
 Instructions:
 1. Break eggs into these.
 
-### Baked Sausage and Eggs
+## Baked Sausage and Eggs
 
 - 6 slices buttered bread
 - 1/2 lb hot sausage
@@ -69,7 +69,7 @@ Instructions:
 5. Combine rest of ingredients - beat well and pour over cheese.
 6. Bake at 350 degrees for 30-40 minutes. Serves 8.
 
-### Baked Ham and Eggs
+## Baked Ham and Eggs
 
 Instructions:
 1. Spray dish or pan, line it with sliced ham.
@@ -78,7 +78,7 @@ Instructions:
 4. Bake until set at 350 degrees.
 5. Cut into squares to serve after cooling for 5-10 minutes.
 
-### Eggs Sardou (Brennan's)
+## Eggs Sardou (Brennan's)
 
 - 1 cup creamed spinach (hot)
 - 2 artichoke bottoms warmed in salted water
@@ -88,7 +88,7 @@ Instructions:
 Instructions:
 1. Place spinach first then artichoke bottoms, eggs, and sauce.
 
-### Eggs Newport
+## Eggs Newport
 
 - 1 can condensed cream of mushroom soup
 - 1/2 cup mayonnaise
@@ -101,7 +101,7 @@ Instructions:
 4. Sprinkle crumbled crisp bacon around edge.
 5. Bake at 350 degrees for 20 minutes. Serves 4.
 
-### Kay's Eggs
+## Kay's Eggs
 
 - 1 large pack cream cheese
 - 1 stick butter

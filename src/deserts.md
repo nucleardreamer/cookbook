@@ -77,9 +77,7 @@ Instructions:
 2. Mix and beat eggs, then add condensed milk, grated lemon rind.
 3. Bake in a water bath at 350 degrees for 1 hour or more until a straw comes out clean.
 
-## Meringues
-
-### My Grandmother Phillips
+## My Grandmother Phillips (Meringues)
 
 - 4 egg whites
 - 1 cup sugar
@@ -90,7 +88,7 @@ Instructions:
 1. Beat until stiff, 6 egg whites adding sugar, cream of tartar, and vinegar gradually.
 2. Turn the oven almost out and bake for 2 hours or bake in a 300-degree oven for 40 minutes if a softer confection is desired.
 
-### Alternate Recipe (Gammie’s Writing)
+## Alternate Recipe (Gammie’s Writing)
 
 Instructions:
 1. Beat until very stiff, 6 egg whites adding 2 cups sugar and 1 teaspoon cream of tartar, and 1 teaspoon vinegar gradually.
@@ -109,7 +107,7 @@ Instructions:
 
 ## Opal’s Cheesecake
 
-### Crust
+## Crust
 
 - 1 1/3 cups graham cracker crumbs
 - 1/2 cup melted butter
@@ -119,7 +117,7 @@ Instructions:
 Instructions:
 1. Press into pie dish and bake at 360 degrees.
 
-### Filling
+## Filling
 
 - 2 eggs
 - 1/3 cup sugar
@@ -292,7 +290,7 @@ Instructions:
 2. Chill for 1 hour and roll 1/8 inch thick on a well-floured surface.
 3. Cut into crescents. Cook on an ungreased sheet at 375 degrees until tan-colored. Ice while warm.
 
-### Icing
+## Icing
 
 - 1 1/2 cups powdered sugar
 - 2 tablespoons boiling water
@@ -312,7 +310,7 @@ Instructions:
 - 4 cups rolled oats
 - 2 cups wheat germ
 
-### Options
+## Options
 
 - 1 cup coconut
 - 1 cup raisins
@@ -351,7 +349,7 @@ Instructions:
 2. Spray bundt or angel pan with pan. Cook at 325 degrees for 1 hour.
 3. Cool 1/2 hour in the pan. Pour glaze into the pan.
 
-### Glaze
+## Glaze
 
 - 1 stick butter
 - 1 cup sugar
@@ -381,7 +379,7 @@ Instructions:
 3. Cut wax paper to line pans (I use three layers).
 4. Bake at 350 degrees for 40 minutes. Cool and frost.
 
-### Frosting
+## Frosting
 
 - 3/4 stick soft butter
 - 1 box powdered sugar
@@ -403,7 +401,7 @@ Instructions:
 2. Soak 1/3 cup poppy seeds in 1/2 cup water for 2 hours. Drain and add to the cream mixture as follows.
 3. Set aside. Cream until fluffy and add poppy seeds.
 
-### Cake
+## Cake
 
 - 2 1/2 cups cake flour or 2 cups all-purpose flour
 - 2 teaspoons baking powder
