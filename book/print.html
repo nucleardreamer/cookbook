@@ -1,0 +1,2322 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Sue&#x27;s Cookbook</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="breakfast_baked.html"><strong aria-hidden="true">1.</strong> Breakfast and Baked Foods</a></li><li class="chapter-item expanded "><a href="egg_dishes.html"><strong aria-hidden="true">2.</strong> Egg Dishes</a></li><li class="chapter-item expanded "><a href="sauces.html"><strong aria-hidden="true">3.</strong> Sauces</a></li><li class="chapter-item expanded "><a href="marinades.html"><strong aria-hidden="true">4.</strong> Marinades and Dressings</a></li><li class="chapter-item expanded "><a href="entres_cassaroles.html"><strong aria-hidden="true">5.</strong> Entres and Cassaroles</a></li><li class="chapter-item expanded "><a href="soups.html"><strong aria-hidden="true">6.</strong> Soups</a></li><li class="chapter-item expanded "><a href="vegis.html"><strong aria-hidden="true">7.</strong> Vegetables</a></li><li class="chapter-item expanded "><a href="salads.html"><strong aria-hidden="true">8.</strong> Salads</a></li><li class="chapter-item expanded "><a href="partyfood_dips.html"><strong aria-hidden="true">9.</strong> Party Food and Dips</a></li><li class="chapter-item expanded "><a href="deserts.html"><strong aria-hidden="true">10.</strong> Deserts</a></li><li class="chapter-item expanded "><a href="confections.html"><strong aria-hidden="true">11.</strong> Confections</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Sue&#x27;s Cookbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="grandma-sues-cookbook"><a class="header" href="#grandma-sues-cookbook">Grandma Sues Cookbook</a></h1>
+<pre><code>FORWARD
+
+I expect that any of you, my darling children, that try
+these recipes, will have questions because it is very
+hard for me to tell you exactly how I cook. It is
+usually a "by the seat of your pants affair" (no pun
+intended) and depends largely upon what is in the
+refrigerator. Don't sell left-overs short. Many of the
+best dishes that I have cooked during my career as
+"Top Chef at 2514 Hudson Place" have evolved because I
+wanted to use something up. My grandmother used to say
+"Use it up, wear it out and make it over". Remember that
+the finest chefs in the world are the French and they are
+also the most thrifty group that I have known.
+
+With the exception of cakes , cookies , candy and other
+desserts, most of the amounts are pretty loose. There are
+no original dessert recipes included here so you should be
+able to depend upon those measurements listed. When I write
+c. or C., it means cup...A capital T is a tablespoon and a
+small t is a teaspoon.
+
+Remember that creating good food is a wonderful and rewarding
+pastime. Carry on and change these recipes to suit your own
+taste and diet.
+
+Another family quote....from my father...he said "Call me
+anything but don't call me late for dinner."
+
+Love,
+      Mom,
+      Susie,
+      Aunt Susie,
+      Sue
+</code></pre>
+<h2 id="note-from-flynn"><a class="header" href="#note-from-flynn">Note from Flynn</a></h2>
+<p>I did the best I could at transcribing these 130 recipes, extract meaning from the overuse of ellipsis, and rationalize some of the seemingly alchemical methods described by Sue Joffray.</p>
+<p>By writing these recipes into a (hopefully) human-readable format, this cook book might have lost a little bit of its soul. When you are reading through these, you won't be able to imagine her talking in your ear as much, but hopefully it will make you cook a little bit better... and not be confused.</p>
+<p>If there any mistakes you see, you can see the original scans of the cookbook <a href="../original_cookbook.pdf">here</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="breakfasts-and-baked-foods"><a class="header" href="#breakfasts-and-baked-foods">Breakfasts and Baked Foods</a></h1>
+<h2 id="crepes"><a class="header" href="#crepes">Crepes</a></h2>
+<p>This is Julia Child's crepe rule - I think the best one. Can be frozen or reheated. Is tender and strong.</p>
+<ul>
+<li>1 cup flour</li>
+<li>3 large eggs</li>
+<li>3 tablespoons melted butter</li>
+<li>2/3 cup water</li>
+<li>2/3 cup milk</li>
+<li>1/4 teaspoon salt</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix in blender 1 hour ahead.</li>
+<li>Pour into pan and tip until batter stops running.</li>
+<li>Serve rolled with jelly and dusted with powdered sugar.</li>
+</ol>
+<h2 id="yeast-pancakes"><a class="header" href="#yeast-pancakes">Yeast Pancakes</a></h2>
+<ul>
+<li>1 pack yeast</li>
+<li>1 1/4 cup warm milk</li>
+<li>1/2 teaspoon salt</li>
+<li>1 tablespoon molasses or 2 tablespoons sugar</li>
+<li>2 eggs</li>
+<li>1/2 cup whole wheat or buckwheat flour</li>
+<li>1/2 cup wheat germ</li>
+<li>1/4 cup powdered milk</li>
+<li>1/4 cup margarine</li>
+</ul>
+<h2 id="fried-mush---thayer-style"><a class="header" href="#fried-mush---thayer-style">Fried Mush - Thayer Style</a></h2>
+<p>The night before:</p>
+<ol>
+<li>Cook cornmeal and place it into a greased meatloaf dish.</li>
+<li>When set, turn out and slice 1/4 inch thick.</li>
+<li>Fry in bacon grease on medium heat until crisp around the edges.</li>
+<li>Serve with maple syrup.</li>
+</ol>
+<h2 id="waffles"><a class="header" href="#waffles">Waffles</a></h2>
+<ul>
+<li>2 cups Bisquick</li>
+<li>1 egg</li>
+<li>1/2 cup oil</li>
+<li>1 1/3 cup club soda</li>
+</ul>
+<p>Extras are good frozen.</p>
+<h2 id="waffles-made-with-milk"><a class="header" href="#waffles-made-with-milk">Waffles Made With Milk</a></h2>
+<ul>
+<li>1/4 cup flour</li>
+<li>1/2 teaspoon salt</li>
+<li>2 eggs</li>
+<li>1/3 cup melted butter</li>
+<li>1 cup milk</li>
+</ul>
+<h2 id="big-pancake"><a class="header" href="#big-pancake">Big Pancake</a></h2>
+<ul>
+<li>1/2 cup flour</li>
+<li>1/2 cup milk</li>
+<li>2 eggs</li>
+<li>1/3 stick butter</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Preheat oven to 425 degrees.</li>
+<li>Spray 9x13 pan with Pam.</li>
+<li>Melt butter in pan.</li>
+<li>Mix flour, milk, and eggs to slightly lumpy.</li>
+<li>Pour into melted butter and bake for 25 minutes.</li>
+<li>Remove from oven and turn onto platter.</li>
+<li>Squeeze 1/2 fresh lemon on and dust with powdered sugar. You can double the recipe but no bigger.</li>
+</ol>
+<h2 id="popovers"><a class="header" href="#popovers">Popovers</a></h2>
+<ul>
+<li>1 cup flour</li>
+<li>2 eggs</li>
+<li>1 cup milk</li>
+<li>1/4 teaspoon salt</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sift flour and salt.</li>
+<li>Beat eggs and add to milk. Combine slowly with flour and beat well.</li>
+<li>Add 1 tablespoon melted butter last.</li>
+<li>Bake in preheated pans with 1/2 teaspoon melted butter in each at 450 degrees for 25 minutes and reduce to 350 degrees for 15 minutes.</li>
+</ol>
+<h2 id="yorkshire-pudding"><a class="header" href="#yorkshire-pudding">Yorkshire Pudding</a></h2>
+<ul>
+<li>2 eggs</li>
+<li>3/4 cup milk</li>
+<li>3/4 cup flour</li>
+<li>1/2 teaspoon salt</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Beat eggs and add flour (presifted with salt) slowly.</li>
+<li>Beat again and pour into hot drippings and grease.</li>
+<li>Bake at 425 degrees for 25 minutes.</li>
+</ol>
+<p>Another recipe from my mother is:</p>
+<ul>
+<li>1 cup water</li>
+<li>4 eggs</li>
+<li>1 cup milk</li>
+<li>1 3/4 cup flour</li>
+</ul>
+<h2 id="gammie-thayers-oatmeal-bread"><a class="header" href="#gammie-thayers-oatmeal-bread">Gammie Thayer's Oatmeal Bread</a></h2>
+<ul>
+<li>1 1/2 cups rolled oats</li>
+<li>2 cups boiling water</li>
+<li>2 teaspoons salt</li>
+<li>1 cake yeast</li>
+<li>1/4 cup lukewarm water</li>
+<li>1/4 cup sugar</li>
+<li>4 1/2 - 5 cups wheat flour</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Pour boiling water over oats, salt, and sugar. Stir and let stand until lukewarm.</li>
+<li>Add yeast dissolved in lukewarm water then gradually add to the flour, kneading until dough is smooth.</li>
+<li>Cover and place away from drafts in warm area until double its bulk.</li>
+<li>Toss onto floured board, shape into two loaves, and put into greased pans.</li>
+<li>Let rise again until double bulk again. Bake in moderate oven for 45-60 minutes.</li>
+</ol>
+<h2 id="basic-muffins"><a class="header" href="#basic-muffins">Basic Muffins</a></h2>
+<ul>
+<li>2 cups flour (one cup may be cornmeal, bran flakes, oatmeal, or other cereal products)</li>
+<li>1 egg</li>
+<li>1 cup milk (sour cream, buttermilk, or yogurt)</li>
+<li>3 tablespoons sugar (molasses, honey, etc.)</li>
+<li>1 tablespoon baking powder (increase 1 teaspoon for bran muffins)</li>
+<li>1/2 teaspoon salt</li>
+<li>3 tablespoons butter, oil, or margarine</li>
+<li>1 teaspoon soda if using raw fruits</li>
+</ul>
+<p>Additions and Variations:</p>
+<ul>
+<li>1 cup pureed vegetables</li>
+<li>3/4 cup dried fruit or nuts</li>
+<li>1 cup fresh fruit (I like bananas)</li>
+<li>1 cup grated cheese</li>
+<li>Herbs, spices, other flavorings</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix wet ingredients together.</li>
+<li>Then dry ingredients.</li>
+<li>Add lumpy things last.</li>
+<li>Bake at 425 degrees for 15-25 minutes. Watch bran muffins as they brown quickly.</li>
+<li>You can double this recipe. Each makes 12-16 medium size muffins.</li>
+</ol>
+<h2 id="my-grandmother-phillips-homemade-noodles"><a class="header" href="#my-grandmother-phillips-homemade-noodles">My Grandmother Phillip's Homemade Noodles</a></h2>
+<ul>
+<li>1 cup flour</li>
+<li>1 egg</li>
+<li>1/2 shell water</li>
+<li>1 teaspoon salt</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix in bowl, adding flour a little at a time.</li>
+<li>Turn onto floured board and roll thin into 12-14 inch circles.</li>
+<li>Dry on tea towels until firm but cuttable.</li>
+<li>Cut into noodles.</li>
+<li>She cooked them with stewed chicken, salt, pepper, tarragon, parsley, and or whatever you like.</li>
+</ol>
+<h2 id="rugolah-from-charlotte-zaret"><a class="header" href="#rugolah-from-charlotte-zaret">Rugolah from Charlotte Zaret</a></h2>
+<ul>
+<li>1/2 lb cream cheese</li>
+<li>1/2 lb sweet butter</li>
+<li>2 cups sifted flour</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Make these in a cool kitchen.</li>
+<li>Put cheese and butter in bowl and blend in butter.</li>
+<li>Mix well, add flour, and mix again.</li>
+<li>Put dough into wax paper in rolls and refrigerate overnight or several hours.</li>
+<li>When ready to use, take out and soften a little.</li>
+<li>Sprinkle powdered sugar on board.</li>
+<li>Take a ball about 3 inches and roll 1/6 inch thick.</li>
+<li>Cut into triangles.</li>
+<li>Place 1/2 teaspoon filling and roll toward the acute tip.</li>
+<li>Also, can cut into circles and cook in small muffin tins open face.</li>
+</ol>
+<p>Fillings:</p>
+<ul>
+<li>Chopped nuts</li>
+<li>Cinnamon</li>
+<li>Sugar or any jam</li>
+</ul>
+<p>Apricot and berry jams are best.</p>
+<h2 id="artichoke-bread"><a class="header" href="#artichoke-bread">Artichoke Bread</a></h2>
+<ul>
+<li>1/4 cup margarine</li>
+<li>2-3 cloves garlic</li>
+<li>2 tablespoons sesame seeds</li>
+<li>1 can (14 oz) artichoke hearts</li>
+<li>1 cup shredded jack cheese</li>
+<li>1 cup Parmesan cheese (grated)</li>
+<li>1 loaf French bread</li>
+<li>1/2 cup grated cheddar cheese</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sauté garlic, seeds, and artichokes in margarine. Chop up in pan.</li>
+<li>Split loaf of bread and hollow out some.</li>
+<li>Mix sauté with jack and Parmesan cheese and stuff onto bread halves.</li>
+<li>Top with cheddar cheese and twist loosely in foil.</li>
+<li>Bake at 350 degrees for 25 minutes before serving.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="egg-dishes"><a class="header" href="#egg-dishes">Egg Dishes</a></h2>
+<h3 id="basic-omelet"><a class="header" href="#basic-omelet">Basic Omelet</a></h3>
+<ul>
+<li>2 eggs</li>
+<li>1 tablespoon milk or cream</li>
+<li>1/4 teaspoon salt</li>
+<li>Dash of pepper</li>
+<li>1 tablespoon butter</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Beat eggs, milk, etc. with a fork.</li>
+<li>Heat butter in an 8-inch pan and pour in mixture.</li>
+<li>Reduce heat and cook without stirring.</li>
+<li>Lift edges occasionally to keep free.</li>
+<li>Shake pan slightly to see if sticking.</li>
+<li>Fold, fill, and turn or turn and top with:</li>
+</ol>
+<h3 id="ranchero-salsa"><a class="header" href="#ranchero-salsa">Ranchero Salsa</a></h3>
+<ul>
+<li>1/2 cup butter</li>
+<li>6 tablespoons chopped onions</li>
+<li>1/2 teaspoon oregano</li>
+<li>1 clove crushed garlic</li>
+<li>1/4 cup chopped bell pepper</li>
+<li>Jalapeno to taste, finely chopped</li>
+<li>Cilantro to taste</li>
+<li>1 can tomatoes</li>
+<li>2 cubes chicken bouillon</li>
+<li>1 cup boiling water</li>
+</ul>
+<h3 id="shrimp-filling"><a class="header" href="#shrimp-filling">Shrimp Filling</a></h3>
+<ul>
+<li>1 cup boiled shrimp</li>
+<li>1/3 cup chopped shallots</li>
+<li>1/3 cup whole chopped tomatoes</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sauté shrimp and shallots and add tomatoes.</li>
+<li>Simmer for 10 minutes.</li>
+</ol>
+<h3 id="crab-filling"><a class="header" href="#crab-filling">Crab Filling</a></h3>
+<ul>
+<li>1/3 cup crab meat</li>
+<li>1/3 cup shallots</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Break eggs into these.</li>
+</ol>
+<h3 id="baked-sausage-and-eggs"><a class="header" href="#baked-sausage-and-eggs">Baked Sausage and Eggs</a></h3>
+<ul>
+<li>6 slices buttered bread</li>
+<li>1/2 lb hot sausage</li>
+<li>1/2 lb plain sausage</li>
+<li>1 teaspoon prepared mustard</li>
+<li>1 (6 oz) package Swiss cheese (sliced)</li>
+<li>3 eggs</li>
+<li>1/4 teaspoon salt</li>
+<li>Dash of pepper</li>
+<li>1 1/4 cups milk</li>
+<li>3/4 cup half and half</li>
+<li>1 teaspoon Worcestershire sauce</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Arrange bread in a 9x13 pyrex dish.</li>
+<li>Sauté sausage into crumbs.</li>
+<li>Add mustard and sprinkle over bread.</li>
+<li>Layer cheese.</li>
+<li>Combine rest of ingredients - beat well and pour over cheese.</li>
+<li>Bake at 350 degrees for 30-40 minutes. Serves 8.</li>
+</ol>
+<h3 id="baked-ham-and-eggs"><a class="header" href="#baked-ham-and-eggs">Baked Ham and Eggs</a></h3>
+<p>Instructions:</p>
+<ol>
+<li>Spray dish or pan, line it with sliced ham.</li>
+<li>Place slices of tomatoes on ham (1 per person).</li>
+<li>Beat and pour over 2 eggs per person and place on top 1 slice American cheese per person.</li>
+<li>Bake until set at 350 degrees.</li>
+<li>Cut into squares to serve after cooling for 5-10 minutes.</li>
+</ol>
+<h3 id="eggs-sardou-brennans"><a class="header" href="#eggs-sardou-brennans">Eggs Sardou (Brennan's)</a></h3>
+<ul>
+<li>1 cup creamed spinach (hot)</li>
+<li>2 artichoke bottoms warmed in salted water</li>
+<li>2 eggs poached</li>
+<li>3/4 cup hollandaise sauce</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Place spinach first then artichoke bottoms, eggs, and sauce.</li>
+</ol>
+<h3 id="eggs-newport"><a class="header" href="#eggs-newport">Eggs Newport</a></h3>
+<ul>
+<li>1 can condensed cream of mushroom soup</li>
+<li>1/2 cup mayonnaise</li>
+<li>1/2 cup milk</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Gradually add milk, stirring until well blended.</li>
+<li>Slice 6 hard-boiled eggs.</li>
+<li>Layer egg slices and mayo sauce in quart baking dish.</li>
+<li>Sprinkle crumbled crisp bacon around edge.</li>
+<li>Bake at 350 degrees for 20 minutes. Serves 4.</li>
+</ol>
+<h3 id="kays-eggs"><a class="header" href="#kays-eggs">Kay's Eggs</a></h3>
+<ul>
+<li>1 large pack cream cheese</li>
+<li>1 stick butter</li>
+<li>1 dozen eggs</li>
+<li>1/2 cup dry white wine</li>
+<li>Salt and pepper</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Melt butter and cream cheese on low heat in large skillet or chafing dish.</li>
+<li>Beat eggs with whisk and add to skillet.</li>
+<li>When eggs are set, add wine and salt and pepper.</li>
+<li>Continue cooking until eggs are firm but not hard, about 10 minutes. Serves 6.</li>
+</ol>
+<p>Note: Can do 2-3 hours ahead.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sauces"><a class="header" href="#sauces">Sauces</a></h1>
+<h2 id="hollandaise-sauce-1-cup---brennans"><a class="header" href="#hollandaise-sauce-1-cup---brennans">Hollandaise Sauce (1 cup) - Brennan's</a></h2>
+<ul>
+<li>4 egg yolks</li>
+<li>2 tablespoons lemon juice</li>
+<li>1/2 lb butter</li>
+<li>1/4 teaspoon salt</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>In the top of a double boiler, beat egg yolks and stir in lemon juice.</li>
+<li>Cook slowly over low heat, never allowing bottom water to boil.</li>
+<li>Add butter a little at a time, stirring constantly with a wooden spoon.</li>
+<li>Add salt and pepper.</li>
+<li>Cook until thick.</li>
+</ol>
+<h2 id="quick-hollandaise-sauce"><a class="header" href="#quick-hollandaise-sauce">Quick Hollandaise Sauce</a></h2>
+<ul>
+<li>1/2 cup sour cream</li>
+<li>1/2 cup mayo</li>
+<li>Lemon juice to taste</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix well with a spoon in a small bowl and serve over vegetables.</li>
+</ol>
+<h2 id="bordelaise-sauce"><a class="header" href="#bordelaise-sauce">Bordelaise Sauce</a></h2>
+<ul>
+<li>1/2 cup olive oil</li>
+<li>1 tablespoon minced garlic</li>
+<li>1 tablespoon minced parsley</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Combine and chill.</li>
+</ol>
+<h2 id="bernaise-sauce-2-cups"><a class="header" href="#bernaise-sauce-2-cups">Bernaise Sauce (2 cups)</a></h2>
+<ul>
+<li>4 egg yolks</li>
+<li>2 tablespoons capers</li>
+<li>Juice of 1 lemon</li>
+<li>1/4 cup chopped parsley</li>
+<li>2 cups melted butter</li>
+<li>1 tablespoon tarragon vinegar</li>
+<li>Salt</li>
+<li>Pepper</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>In the top of a double boiler, beat eggs and lemon juice.</li>
+<li>Cook slowly over very low heat. Don't let water boil.</li>
+<li>Slowly add butter, stirring with a wooden spoon.</li>
+<li>Add remaining ingredients.</li>
+<li>Stir to blend until thickened.</li>
+</ol>
+<h2 id="raisin-sauce"><a class="header" href="#raisin-sauce">Raisin Sauce</a></h2>
+<ul>
+<li>1/2 cup raisins</li>
+<li>1 cup red wine</li>
+<li>1 tablespoon corn starch</li>
+<li>1/2 cup sugar</li>
+<li>1/2 tablespoon dry mustard</li>
+<li>2 inch stick cinnamon</li>
+<li>1/4 cup vinegar</li>
+<li>1/2 teaspoon powdered cloves</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Soak raisins in wine for several hours.</li>
+<li>Drain and use wine for sauce.</li>
+<li>Mix corn starch, sugar, and spices.</li>
+<li>Stir in wine and vinegar and continue stirring over low heat until thick.</li>
+<li>Add raisins.</li>
+</ol>
+<h2 id="mint-sauce-thayer-variety"><a class="header" href="#mint-sauce-thayer-variety">Mint Sauce (Thayer Variety)</a></h2>
+<ul>
+<li>1 cup white sugar</li>
+<li>1 cup brown sugar</li>
+<li>1/2 cup vinegar</li>
+<li>1/2 cup water</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Boil until thickened but not thick enough to hair.</li>
+<li>Pour over 1/2 cup chopped mint and cover to steep.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="marinades-and-dressings"><a class="header" href="#marinades-and-dressings">Marinades and Dressings</a></h1>
+<h2 id="pork-marinade"><a class="header" href="#pork-marinade">Pork Marinade</a></h2>
+<ul>
+<li>1/2 cup soy sauce (Kikkoman)</li>
+<li>1/4 cup brown sugar or honey</li>
+<li>2 tablespoons oil</li>
+<li>1 teaspoon dry ginger or 2 tablespoons grated fresh ginger</li>
+<li>1/2 teaspoon MSG</li>
+<li>1/4 teaspoon pepper</li>
+<li>2 cloves minced garlic</li>
+<li>Juice of a lemon or two tangerines or one orange</li>
+</ul>
+<h2 id="dark-meat-marinade-especially-for-stir-fry"><a class="header" href="#dark-meat-marinade-especially-for-stir-fry">Dark Meat Marinade (Especially for Stir Fry)</a></h2>
+<ul>
+<li>1 1/2 tablespoons dark soy sauce</li>
+<li>1 tablespoon wine (white dry, not sweet)</li>
+<li>1 tablespoon corn starch</li>
+<li>1/2 teaspoon sugar</li>
+<li>1/8 teaspoon pepper</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Good for pork, beef, chicken legs, etc.</li>
+</ol>
+<h2 id="white-meat-marinade"><a class="header" href="#white-meat-marinade">White Meat Marinade</a></h2>
+<ul>
+<li>1 teaspoon salt</li>
+<li>1 tablespoon wine</li>
+<li>1 tablespoon corn starch</li>
+<li>1 egg white, unbeaten, but scrambled</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Good for chicken breast, shrimp, fillet of fish, etc.</li>
+</ol>
+<h2 id="great-salad-dressing"><a class="header" href="#great-salad-dressing">Great Salad Dressing</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Two weeks ahead, put some oil in an empty mayo jar and add 6-8 cloves peeled garlic.</li>
+<li>Blend in blender:
+<ul>
+<li>3/4 cup garlic oil</li>
+<li>Juice of 1 lime</li>
+<li>Juice of a lemon</li>
+<li>1/3 jar Beau Monde seasoning (Spice Island)</li>
+<li>1 teaspoon Worcestershire sauce</li>
+<li>Pepper</li>
+<li>Dash of Tabasco</li>
+<li>A wedge of blue cheese</li>
+</ul>
+</li>
+<li>Mix with 1 pint mayonnaise.</li>
+</ol>
+<h2 id="poppy-seed-dressing"><a class="header" href="#poppy-seed-dressing">Poppy Seed Dressing</a></h2>
+<ul>
+<li>1 cup plus 2 tablespoons sugar</li>
+<li>1 1/2 teaspoons salt</li>
+<li>1 teaspoon pepper</li>
+<li>1 teaspoon paprika</li>
+<li>1 1/2 teaspoons dry mustard</li>
+<li>1 cup vinegar</li>
+<li>2 tablespoons onion juice</li>
+<li>1 1/2 cups oil</li>
+<li>2 tablespoons poppy seeds</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Blend all but seeds and oil on high speed.</li>
+<li>Add oil gradually and seeds last.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="entrees-and-casseroles"><a class="header" href="#entrees-and-casseroles">Entrees and Casseroles</a></h1>
+<h2 id="meat-loaf---ann-landers-recipe"><a class="header" href="#meat-loaf---ann-landers-recipe">Meat Loaf - Ann Landers Recipe</a></h2>
+<ul>
+<li>2 lb ground beef or turkey (add soy sauce to turkey for color)</li>
+<li>2 eggs</li>
+<li>3/4 cup catsup</li>
+<li>1 tablespoon MSG</li>
+<li>1 pack onion soup</li>
+<li>1/2 cup warm water</li>
+<li>1/2 cup dry bread crumbs</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix and pat into meatloaf pan or dish.</li>
+<li>Cover with 2 strips of bacon and 1 8 oz can tomato sauce.</li>
+<li>Bake at 350 degrees for 1 hour.</li>
+</ol>
+<h2 id="beef-burgundy"><a class="header" href="#beef-burgundy">Beef Burgundy</a></h2>
+<ul>
+<li>2 1/2 - 3 lbs stew meat</li>
+<li>1 can cream of celery soup</li>
+<li>1 can cream of mushroom soup</li>
+<li>1 can cream of chicken soup</li>
+<li>1/2 pack Lipton's onion soup mix</li>
+<li>1 cup Burgundy wine</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix all ingredients and bake at 350 degrees for 2 1/2-3 hours in a covered casserole dish.</li>
+</ol>
+<h2 id="stuffed-french-bread"><a class="header" href="#stuffed-french-bread">Stuffed French Bread</a></h2>
+<ul>
+<li>1/2 lb sausage</li>
+<li>1/2 lb ground beef</li>
+<li>1 chopped onion</li>
+<li>1/3 cup water</li>
+<li>1 egg</li>
+<li>1/2 teaspoon salt</li>
+<li>1/8 teaspoon pepper</li>
+<li>1/2 teaspoon yellow mustard</li>
+<li>2 tablespoons parsley</li>
+<li>2 teaspoons sausage mix</li>
+<li>2 tablespoons butter</li>
+<li>2 cloves garlic</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Cook sausage in skillet, crumble and add ground beef and onion until browned.</li>
+<li>Cut ends and split two loaves of brown and serve French bread.</li>
+<li>Hollow out and mix crumbs with water, egg, parsley, mustard, salt, pepper, and sausage mix.</li>
+<li>Pack shells and replace ends, skewer in place.</li>
+<li>Crush garlic and add to butter, brush on outside and bake at 400 degrees for 15-20 minutes.</li>
+<li>Cut into 2-inch slices to serve.</li>
+</ol>
+<h2 id="veal-in-sauterne-saucewild-rice"><a class="header" href="#veal-in-sauterne-saucewild-rice">Veal in Sauterne Sauce/Wild Rice</a></h2>
+<ul>
+<li>1 1/2 lb veal (thinly cut and pounded)</li>
+<li>3 tablespoons butter</li>
+<li>2 tablespoons flour</li>
+<li>1 cup chicken broth or bouillon</li>
+<li>1/2 cup Sauterne wine</li>
+<li>1/2 teaspoon marjoram</li>
+<li>Salt and pepper</li>
+<li>10 oz wild rice</li>
+<li>8 oz hearts of artichoke (quartered)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sauté veal in butter, remove and set aside.</li>
+<li>Blend in flour, add broth, wine, marjoram, salt, and pepper.</li>
+<li>Heat and stir until sauce thickens and is smooth.</li>
+<li>Spread in casserole, add wild rice and scatter artichokes.</li>
+<li>Place veal on top with any accumulation of drippings and pour sauce on top.</li>
+<li>Bake at 350 degrees for 25-30 minutes.</li>
+</ol>
+<h2 id="tamale-pie---ethel-thayer"><a class="header" href="#tamale-pie---ethel-thayer">Tamale Pie - Ethel Thayer</a></h2>
+<ul>
+<li>1 1/2 lb ground chuck or turkey (add some oil to turkey)</li>
+<li>1 large can tomatoes</li>
+<li>1 medium onion (chopped)</li>
+<li>1 teaspoon salt</li>
+<li>1/4 teaspoon garlic powder</li>
+<li>1/8 teaspoon pepper</li>
+<li>1 small can pitted black olives</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Brown meat and add the rest of the ingredients. Boil uncovered for 20 minutes.</li>
+<li>Sauté 8 tortillas (halved) in 1/4 cup oil and drain.</li>
+<li>Mix 1 egg with a carton of small curd cottage cheese.</li>
+<li>In a 3-quart casserole, layer as follows: 1/3 of meat, then 1/2 of the tortillas, then 1/2 of the cottage cheese mix, and a layer of jack cheese.</li>
+<li>Repeat again ending with meat, then crushed fritos or tortilla chips on top with grated cheddar cheese.</li>
+<li>Bake for 20 minutes at 350 degrees.</li>
+</ol>
+<h2 id="braised-lamb-shanks"><a class="header" href="#braised-lamb-shanks">Braised Lamb Shanks</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Sprig them with slivered garlic, then rub them with salt, pepper, and curry powder.</li>
+<li>Dredge in flour and place shanks on a rack in a pan and in the bottom of the pan.</li>
+<li>Brown at 450 degrees for 15-20 minutes.</li>
+<li>Put some water in the pan and cover closely.</li>
+<li>Turn down heat to 325 and cook for a total of 2 1/2 hours.</li>
+<li>In the last 15 minutes, remove cover or foil and glaze with chutney.</li>
+</ol>
+<h2 id="chuck-roast---latin-style"><a class="header" href="#chuck-roast---latin-style">Chuck Roast - Latin Style</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Brown roast in oil in a large pot.</li>
+<li>Add sliced onions, green bell peppers, garlic, and cover with boiling water.</li>
+<li>Add 1 can tomato paste, 1 tablespoon Worcestershire sauce, 1 tablespoon soy sauce, 1 bay leaf, and simmer for 2 hours until nearly tender.</li>
+<li>Add carrots and cook until tender.</li>
+<li>Save extra sauce for paella or soup stock.</li>
+</ol>
+<h2 id="easy-chuck-roast"><a class="header" href="#easy-chuck-roast">Easy Chuck Roast</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Line baking pan with foil.</li>
+<li>Place chuck roast in, then pour over top one can cream of mushroom soup (undiluted) and one pack Lipton's dry onion soup mix.</li>
+<li>Slice some bell peppers and add 1/2 cup red wine (optional).</li>
+<li>Seal well with foil on top.</li>
+<li>Pinch edges to make airtight.</li>
+<li>Bake at 350 degrees for 2 1/2 hours.</li>
+</ol>
+<h2 id="stuffed-leg-of-lamb"><a class="header" href="#stuffed-leg-of-lamb">Stuffed Leg of Lamb</a></h2>
+<ul>
+<li>1 boned leg of lamb</li>
+<li>1 onion</li>
+<li>1 lb mushrooms (quartered)</li>
+<li>1 (12 oz) pack spinach souffle (Stouffer's)</li>
+<li>4 oz stuffing mix</li>
+<li>2 tablespoons butter</li>
+<li>3 tablespoons lemon juice</li>
+<li>Salt and pepper</li>
+<li>White wine to baste</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Rub lamb with minced garlic and sauté onion in butter.</li>
+<li>Add stuffing mix and lemon, and thawed spinach mix, salt, and pepper.</li>
+<li>Mix it all up with an egg and stuff into cavity.</li>
+<li>Roll and reshape by tying with twine.</li>
+<li>Cook on rack at 425 degrees for 20 minutes.</li>
+<li>Turn down and continue at 325 for another hour.</li>
+<li>Let rest for 15 minutes outside oven covered with foil before carving (meat thermometer should read 125-130 degrees before removing).</li>
+</ol>
+<h2 id="taco-meat"><a class="header" href="#taco-meat">Taco Meat</a></h2>
+<ul>
+<li>1 lb ground meat</li>
+<li>1 chopped onion</li>
+<li>1 green chili</li>
+<li>1 teaspoon Lowry's seasoned salt</li>
+<li>1 clove minced garlic</li>
+<li>1/4 teaspoon ground cumin</li>
+<li>1 teaspoon oregano</li>
+<li>1 teaspoon chili powder</li>
+<li>1 medium to large diced tomato</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sauté meat. If using turkey, add oil to sauté and crumble.</li>
+<li>Add remaining ingredients and some salsa if desired.</li>
+</ol>
+<h2 id="gammie-thayers-baked-beans"><a class="header" href="#gammie-thayers-baked-beans">Gammie Thayer's Baked Beans</a></h2>
+<ul>
+<li>1 quart navy beans (cooked until the skins blow off)</li>
+<li>1/2 cup sugar</li>
+<li>1 chopped onion</li>
+<li>2 tablespoons baking soda</li>
+<li>1 teaspoon salt</li>
+<li>1 tablespoon vinegar</li>
+<li>1 tablespoon molasses</li>
+<li>3/4 lb salt pork (cubed)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Bake together in a bean pot.</li>
+</ol>
+<h2 id="new-orleans-style-red-beans"><a class="header" href="#new-orleans-style-red-beans">New Orleans Style Red Beans</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Sauté ham and sliced sausage, drain fat, and add chopped garlic, celery tops, and chopped carrot tops if available, and chopped onion.</li>
+<li>Bring red kidney beans to boil in salted water.</li>
+<li>Add ham bone and cook until meat falls off. If you don't have one, just skip that step.</li>
+<li>Add cubed ham and sausage and sautéed vegetables.</li>
+<li>Add more water when necessary, cook until beans are soft and liquid is creamy.</li>
+<li>Mash some beans if necessary.</li>
+<li>Check the salt and add if needed.</li>
+<li>Serve over cooked rice.</li>
+</ol>
+<h2 id="lentils-and-rice"><a class="header" href="#lentils-and-rice">Lentils and Rice</a></h2>
+<ul>
+<li>1 cup lentils</li>
+<li>5-6 medium onions (sliced)</li>
+<li>1 teaspoon salt</li>
+<li>3/4 cup olive oil</li>
+<li>3/4 cup rice</li>
+<li>7 cups water</li>
+<li>Parsley</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Cook lentils for 20 minutes, add rice, and cook for 15 minutes more.</li>
+<li>Meanwhile, cut onions into slices and sauté in oil until brown.</li>
+<li>Add onions and oil to lentils and rice and cook for 15 minutes more on low flame uncovered until all liquid is absorbed.</li>
+<li>Stir to prevent sticking and chill for 24 hours before serving.</li>
+<li>Good at room temperature.</li>
+</ol>
+<h2 id="cheese-grits"><a class="header" href="#cheese-grits">Cheese Grits</a></h2>
+<ul>
+<li>3 cups water</li>
+<li>1 cup uncooked grits</li>
+<li>1 cup sharp cheddar cheese</li>
+<li>1/2 teaspoon salt</li>
+<li>Paprika</li>
+<li>1/2 stick butter</li>
+<li>3 egg yolks</li>
+<li>Cayenne pepper to taste</li>
+<li>Garlic salt or powder</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Bring water to boil and add salt and grits.</li>
+<li>Simmer for 5 minutes.</li>
+<li>Add remaining ingredients with grated cheese.</li>
+<li>Mix well.</li>
+<li>Bake at 400 degrees for 30 minutes or 350 for 1 hour.</li>
+</ol>
+<h2 id="chili"><a class="header" href="#chili">Chili</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Cover beans with triple depth water and bring to boil. Let sit for an hour or so.</li>
+<li>Meanwhile, brown meat and crumble, drain fat. If using veal or turkey, you might need to add some oil.</li>
+<li>While meat is browning, add 2 cups diced onions, 1/2 cup diced celery, a chopped green pepper, and garlic to taste (use 4-5 cloves).</li>
+<li>Add this mix to beans with 1 1/2 teaspoons chili powder, 1/2 teaspoon oregano, 1/4 teaspoon cumin, 1 bay leaf, 2/3 cup crushed tomatoes, and 2/3 cup tomato puree.</li>
+<li>Add 2 packs instant chicken broth and seasoning mix or bouillon.</li>
+<li>Can use precooked canned beans, if so, use the equivalent of 24 ounces. If using dried beans, you may have to keep adding water.</li>
+<li>Cook on low heat, stir frequently.</li>
+<li>Add some jalapeno to taste and/or a can of salsa casera.</li>
+</ol>
+<h3 id="beef-ro-tel"><a class="header" href="#beef-ro-tel">Beef Ro-Tel</a></h3>
+<p>Instructions:</p>
+<ol>
+<li>Brown stew meat that has been dredged in flour with onions and garlic and salt.</li>
+<li>Pour over a can of Ro-Tel tomatoes.</li>
+<li>Season with oregano, bay leaf, and cover with dry red wine.</li>
+<li>Simmer until tender, 2-2 1/2 hours, adding more wine as needed.</li>
+<li>When tender, add a can of cream of mushroom soup or fresh mushrooms and heavy cream (use condensed skim milk).</li>
+<li>Correct salt and serve over rice.</li>
+<li>If Ro-Tel tomatoes are not available, use Mexican style tomatoes and hot peppers.</li>
+</ol>
+<h2 id="arroz-con-pollo"><a class="header" href="#arroz-con-pollo">Arroz Con Pollo</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Dice and sauté in a large skillet: 1/4 lb bacon or ham, 2 green peppers, 1 sweet pepper, 2 onions, 3-4 cloves garlic.</li>
+<li>Add 1/2 oz olives, 1/4 oz capers, 1 teaspoon oregano, accent, salt, and pepper.</li>
+<li>In another pan, brown chicken in olive oil. Remove chicken and sauté rice in drippings until rice is opaque.</li>
+<li>In a large baking pan or dish, place cooked vegetables from above, chicken and rice. Add twice the amount of liquid as rice. The liquid should be stale beer and chicken stock.</li>
+<li>Add a small can of tomato sauce and a small tomato paste. Mix so that all rice is covered and add frozen or canned tiny peas.</li>
+<li>Bake in oven at medium heat until all liquid is gone.</li>
+</ol>
+<h2 id="chicken-in-celery-sauce"><a class="header" href="#chicken-in-celery-sauce">Chicken in Celery Sauce</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Place raw chicken in a casserole.</li>
+<li>Spread over top one can of cream of celery soup.</li>
+<li>Sprinkle with parsley, paprika, salt, pepper, garlic salt.</li>
+<li>Cover and bake for 1 to 1 1/4 hours at 350 degrees.</li>
+</ol>
+<h2 id="chicken-in-a-bag"><a class="header" href="#chicken-in-a-bag">Chicken in a Bag</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Towel dry one fryer chicken.</li>
+<li>Slather inside and out with margarine.</li>
+<li>Season with garlic salt, pepper, and paprika.</li>
+<li>Place in a brown bag on a rack in a pan.</li>
+<li>Bag should be folded closed on the end.</li>
+<li>Bake for 1 to 1 1/4 hours depending on size at 425 degrees.</li>
+</ol>
+<h2 id="chicken-sesame"><a class="header" href="#chicken-sesame">Chicken Sesame</a></h2>
+<ul>
+<li>3 lb chicken (use breasts)</li>
+<li>Buttermilk</li>
+<li>1 cup butter</li>
+<li>1/2 teaspoon tarragon</li>
+<li>3 tablespoons lemon juice</li>
+<li>4 cups fine bread crumbs from dry bread</li>
+<li>1/4 cup parsley</li>
+<li>1/2 cup sesame seeds</li>
+<li>3 teaspoons seasoned salt</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Place chicken in a shallow pan, cover with buttermilk, and refrigerate overnight.</li>
+<li>Next day, pour off buttermilk and pat dry with paper towels.</li>
+<li>Melt butter and add tarragon, add lemon juice.</li>
+<li>Prepare bread crumbs in a blender, add parsley, sesame seeds, and seasoned salt.</li>
+<li>Dip chicken in butter and then crumbs.</li>
+<li>Arrange in dish and spoon any remaining butter over top.</li>
+<li>Cover tightly and refrigerate for 1 1/2 hours.</li>
+<li>Bake in a 350-degree oven without turning until golden and tender, about 1 1/2 hours, basting 2-3 times.</li>
+</ol>
+<h2 id="chicken-divine"><a class="header" href="#chicken-divine">Chicken Divine</a></h2>
+<ul>
+<li>2 cups margarine</li>
+<li>1 cup flour</li>
+<li>7 cups whole milk</li>
+<li>1 tablespoon salt</li>
+<li>1 small can tomato sauce</li>
+<li>1 tablespoon crushed red pepper</li>
+<li>2 teaspoons accent</li>
+<li>2 small crushed garlic cloves</li>
+<li>1/2 lb grated American cheese</li>
+<li>5 oz Gruyere cheese (grated)</li>
+<li>2 poached chickens</li>
+<li>5 large cans of mushrooms</li>
+<li>5 large cans of artichoke hearts (cut in half)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Melt margarine and stir in flour, cook for 3-4 minutes and stir in milk.</li>
+<li>Add salt, tomato sauce, crushed red pepper, accent, and crushed garlic cloves.</li>
+<li>Add grated American cheese and Gruyere cheese.</li>
+<li>Cook together until cheese melts, add meat from poached chickens, mushrooms, and artichoke hearts.</li>
+<li>Bake at 350 degrees until bubbling. Serves 20.</li>
+</ol>
+<h2 id="curried-chicken"><a class="header" href="#curried-chicken">Curried Chicken</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Sauté chopped onion in butter and flour.</li>
+<li>Add celery or seed, cooked chicken, curry powder, salt, pepper, chopped sour apple, and broth to make cream sauce.</li>
+<li>Serve with chopped peanuts, raisins, chutney, coconut, chopped egg, crumbled bacon, diced tomatoes, etc.</li>
+<li>Some like it hot, add white pepper and/or cayenne.</li>
+</ol>
+<h2 id="chicken-breasts-in-white-wine-sauce"><a class="header" href="#chicken-breasts-in-white-wine-sauce">Chicken Breasts in White Wine Sauce</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Pound breasts between waxed paper until thin and spread out.</li>
+<li>Dredge in flour and sauté in butter or margarine with garlic and chopped onions.</li>
+<li>Sprinkle with tarragon and cover with white wine (dry).</li>
+<li>Simmer until almost tender.</li>
+<li>Add sliced carrots, mushrooms, and thicken with cream and/or cornstarch.</li>
+<li>Correct salt.</li>
+<li>Add some frozen peas and serve over noodles or rice.</li>
+</ol>
+<h2 id="paella"><a class="header" href="#paella">Paella</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Measure juice from Latin style chuck roast and remove fat.</li>
+<li>Add juice from a can of tiny peas, bring to a boil and add half the measurement of rice.</li>
+<li>Stir and add shrimp, peas, capers, olives, and any other shellfish or chicken.</li>
+<li>Cook covered on low flame until rice is done.</li>
+</ol>
+<h2 id="shrimp-curry"><a class="header" href="#shrimp-curry">Shrimp Curry</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Sauté shrimp in butter until opaque.</li>
+<li>Add green onions, 1 can of cream of mushroom soup, a little water, a dash of Tabasco, 1 tablespoon Worcestershire sauce, and curry powder to taste.</li>
+<li>Add sliced hard-boiled eggs at the end and serve with rice and whatever condiments you like (raisins, peanuts, bacon bits, chopped onion, tomato, cucumbers, etc.). Chutney is a must.</li>
+</ol>
+<h2 id="boiled-shrimp"><a class="header" href="#boiled-shrimp">Boiled Shrimp</a></h2>
+<ul>
+<li>2 cans beer</li>
+<li>5 lbs shrimp (with tails on)</li>
+<li>1/2 cup salt</li>
+<li>1 quart vinegar</li>
+<li>1/4 cup black pepper</li>
+<li>1 teaspoon red pepper</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Bring to boil and add shrimp, bring back to boil and 5 minutes more.</li>
+<li>Serve with sauce made of brown butter, Worcestershire, and Tabasco.</li>
+</ol>
+<h2 id="oysters-mosca"><a class="header" href="#oysters-mosca">Oysters Mosca</a></h2>
+<ul>
+<li>2 jars oysters (drained)</li>
+<li>Lemon</li>
+<li>1 part Italian bread crumbs</li>
+<li>1/2 part Parmesan cheese</li>
+<li>Parsley</li>
+<li>Oregano</li>
+<li>Olive oil</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Squeeze lemon over and soak for 10 minutes.</li>
+<li>Roll the oysters in stuffing made with bread crumbs, Parmesan cheese, parsley, and oregano.</li>
+<li>Oil a baking dish and place breaded oysters side by side.</li>
+<li>Drizzle some olive oil on top and bake until brown at 350 degrees.</li>
+</ol>
+<h2 id="baked-fish---easy"><a class="header" href="#baked-fish---easy">Baked Fish - Easy</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Buy fillet of sole or trout or any good white fish.</li>
+<li>Butter a casserole dish and place fish (skin side down).</li>
+<li>Place chopped green onions, yogurt, or sour cream on top.</li>
+<li>Sprinkle with soy sauce and pepper, add 2 tablespoons white wine.</li>
+<li>Top with slivered almonds and bake at 350 degrees until bubbling.</li>
+</ol>
+<h2 id="shrimp-souffle"><a class="header" href="#shrimp-souffle">Shrimp Souffle</a></h2>
+<ul>
+<li>5 cups cooked rice</li>
+<li>2 cans sliced water chestnuts (drained)</li>
+<li>3/4 cup chopped celery</li>
+<li>1/4 cup chopped onions</li>
+<li>1 small can pimentos</li>
+<li>1/4 cup chopped parsley</li>
+<li>2-3 lbs cooked shrimp</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Cook rice and mix with above ingredients.</li>
+<li>Mix with the following sauce:</li>
+<li>Melt 1/4 lb butter and add 1/3 cup flour, cook for a few minutes and add a quart of milk slowly, stirring until it begins to thicken.</li>
+<li>Mix in 1 pint Best Foods or Hellmann's mayonnaise, salt, accent, 1 1/2 teaspoon curry powder, 1 teaspoon prepared mustard, 1 teaspoon horseradish, and 1 tablespoon lemon juice.</li>
+<li>Mix all and bake in large casserole dish for 30-40 minutes until bubbling.</li>
+<li>Might have to add a little milk. Serves 12.</li>
+</ol>
+<h2 id="broiled-shrimp"><a class="header" href="#broiled-shrimp">Broiled Shrimp</a></h2>
+<ul>
+<li>2 sticks margarine</li>
+<li>Lots of garlic (pressed)</li>
+<li>Oregano</li>
+<li>Black pepper</li>
+<li>Cayenne pepper</li>
+<li>1 tablespoon or more rosemary</li>
+<li>3 glugs of white wine</li>
+<li>Salt</li>
+<li>Parsley</li>
+<li>Dollop of catsup</li>
+<li>Juice of a lemon (can substitute olive oil for half of the margarine)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Heat above together and simmer on low for 20 minutes.</li>
+<li>Pour over shrimp in a broiler pan, allow to marinate until ready to cook.</li>
+<li>Broil on bottom or middle of oven, stir every couple of minutes to cook all shrimp evenly.</li>
+<li>Be sure to have French bread to dip in sauce.</li>
+</ol>
+<h2 id="oyster-artichoke-ramekins"><a class="header" href="#oyster-artichoke-ramekins">Oyster Artichoke Ramekins</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Boil artichokes for 45 minutes, scrape leaves, and dice hearts.</li>
+<li>Brown 1 1/2 tablespoons flour in 3 tablespoons butter.</li>
+<li>Add 3/4 teaspoon salt, 3/4 teaspoon pepper, 1/4 teaspoon hot sauce, 2 teaspoons paprika, 1/2 teaspoon thyme.</li>
+<li>Add 2 dozen oysters with their liquor, 1 tablespoon chopped pimento, and 1 teaspoon pressed garlic.</li>
+<li>Cook until oysters curl, add 1 oz sherry.</li>
+<li>Distribute into 4 ramekins and top with 3/4 cup bread crumbs.</li>
+<li>Dot with butter and heat in hot oven at 450 degrees until crumbs brown.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="soups"><a class="header" href="#soups">Soups</a></h1>
+<h2 id="onion-soup"><a class="header" href="#onion-soup">Onion Soup</a></h2>
+<ul>
+<li>4 sliced onions</li>
+<li>2 cloves garlic (chopped)</li>
+<li>4 tablespoons butter</li>
+<li>6 cups chicken broth</li>
+<li>1/2 teaspoon crushed red pepper</li>
+<li>1/4 teaspoon Worcestershire sauce</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sauté onions and garlic in butter until yellow.</li>
+<li>Add broth, Worcestershire sauce, and red pepper.</li>
+<li>Cut 6 slices of bread into circles, toast with butter and Parmesan cheese.</li>
+<li>Serve soup hot, top with a bread round and some more Parmesan cheese.</li>
+</ol>
+<h2 id="parsley-soup"><a class="header" href="#parsley-soup">Parsley Soup</a></h2>
+<ul>
+<li>4 cups chicken stock</li>
+<li>2 cups firmly packed chopped parsley</li>
+<li>3 chopped onions</li>
+<li>1 teaspoon sugar</li>
+<li>1 teaspoon salt</li>
+<li>1 teaspoon pepper</li>
+<li>1 cup chopped green onions</li>
+<li>2 cups milk</li>
+<li>2 cups diced potatoes</li>
+<li>3 tablespoons sherry</li>
+<li>2 tablespoons margarine</li>
+<li>3 tablespoons flour</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Place broth, parsley, onions, sugar, salt, and pepper in a 2 qt pan and heat to boiling.</li>
+<li>Reduce heat and simmer covered for 30 minutes.</li>
+<li>Strain and reserve broth and parsley separately.</li>
+<li>Heat 1 cup milk with potatoes, cover in a small pan over medium heat until tender (15 minutes).</li>
+<li>Heat butter in a 2 qt pan over low heat, stir in green onions, sauté, and add flour.</li>
+<li>Cook and stir until smooth, slowly stir in reserved broth and onions with 1 cup milk.</li>
+<li>Add to mixture, stirring constantly, cook 1 minute and reduce heat.</li>
+<li>Add potatoes and sherry, heat until hot only (don't boil).</li>
+<li>Serve garnished with parsley.</li>
+</ol>
+<h2 id="mushroom-soup"><a class="header" href="#mushroom-soup">Mushroom Soup</a></h2>
+<ul>
+<li>1/2 lb mushrooms</li>
+<li>3 tablespoons butter</li>
+<li>2 chopped medium onions</li>
+<li>2 tablespoons flour</li>
+<li>5 cups chicken stock</li>
+<li>Salt</li>
+<li>Pepper</li>
+<li>1 cup rice</li>
+<li>1 bay leaf</li>
+<li>2 tablespoons chopped watercress</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Slice mushroom caps and chop stems.</li>
+<li>Melt butter and add onions and mushrooms, steam for 6 minutes.</li>
+<li>Blend in flour and add stock.</li>
+<li>Season and add rice, bay leaf, cover, and simmer for 15-20 minutes.</li>
+</ol>
+<h2 id="split-pea-soup"><a class="header" href="#split-pea-soup">Split Pea Soup</a></h2>
+<ul>
+<li>1 pack dry split peas</li>
+<li>1 ham bone</li>
+<li>8 cups water</li>
+<li>2 diced carrots</li>
+<li>1 large diced onion</li>
+<li>1 bay leaf</li>
+<li>1 finely chopped garlic clove</li>
+<li>6 peppercorns</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Simmer for 3-3 1/2 hours, remove ham and bone.</li>
+<li>Mash or blend peas and vegetables, shred ham, and return to soup.</li>
+<li>Salt to taste.</li>
+</ol>
+<h2 id="gumbo"><a class="header" href="#gumbo">Gumbo</a></h2>
+<ul>
+<li>1 cup butter</li>
+<li>1 cup finely chopped white onion</li>
+<li>1 cup finely chopped celery</li>
+<li>1/2 cup flour</li>
+<li>3-4 bay leaves</li>
+<li>4 cups liquid (use oyster water and any other stock)</li>
+<li>2 cups whole canned tomatoes</li>
+<li>3 dozen oysters</li>
+<li>2 cups raw shrimp</li>
+<li>3 cups thinly sliced okra</li>
+<li>4 teaspoons salt</li>
+<li>3/4 teaspoon white pepper</li>
+<li>Cayenne</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Melt butter in a 4 qt pan.</li>
+<li>Add celery and onion, sauté until lightly brown.</li>
+<li>Stir in flour and cook until golden (this is a roux).</li>
+<li>Blend in liquid and tomatoes, simmer for 5 minutes.</li>
+<li>Add bay leaves, crabs, oysters, shrimp, okra, salt, and pepper.</li>
+<li>Cook on low heat for 20 minutes.</li>
+</ol>
+<h2 id="gazpacho"><a class="header" href="#gazpacho">Gazpacho</a></h2>
+<ul>
+<li>2 cups tomatoes (peeled and chopped)</li>
+<li>1 cup onion (chopped)</li>
+<li>1 cup celery</li>
+<li>1/2 cup green pepper</li>
+<li>1 cup cucumber</li>
+<li>2 tablespoons vinegar</li>
+<li>2 tablespoons salad oil</li>
+<li>2 cups tomato juice</li>
+<li>1 envelope low-cal salad dressing mix</li>
+<li>Dash of Tabasco</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Peel and chop tomatoes, onion, celery, green pepper, and cucumber.</li>
+<li>Add vinegar, salad oil, tomato juice, salad dressing mix, and Tabasco.</li>
+<li>Chill for 3 hours or overnight.</li>
+</ol>
+<h2 id="hamburger-soup"><a class="header" href="#hamburger-soup">Hamburger Soup</a></h2>
+<ul>
+<li>3 tablespoons butter</li>
+<li>1 onion</li>
+<li>1 1/2 lb ground beef</li>
+<li>1 can (1 lb, 12 oz) tomatoes</li>
+<li>3 cans consommé</li>
+<li>2 cups water</li>
+<li>4 medium carrots</li>
+<li>1 bay leaf</li>
+<li>4 celery tops</li>
+<li>1/2 teaspoon thyme</li>
+<li>2 sprigs parsley</li>
+<li>10 peppercorns</li>
+<li>1 tablespoon salt</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sauté chopped onion until soft.</li>
+<li>Brown meat, pour in tomatoes, consommé, water, and scraped sliced carrots.</li>
+<li>Simmer for 45 minutes and serve with grated cheese.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vegetables"><a class="header" href="#vegetables">Vegetables</a></h1>
+<h2 id="broccoli-casserole"><a class="header" href="#broccoli-casserole">Broccoli Casserole</a></h2>
+<ul>
+<li>2 oz cream cheese</li>
+<li>1/4 cup milk</li>
+<li>1 can shrimp soup</li>
+<li>2 teaspoons lemon juice</li>
+<li>Almonds (slivered or sliced)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix cream cheese and chives with milk, shrimp soup, lemon juice, and heat to blend.</li>
+<li>Sauté almonds and set aside.</li>
+<li>Pour sauce over cooked broccoli and top with almonds.</li>
+<li>Serves 4-5.</li>
+</ol>
+<h2 id="cauliflower-in-soy-sauce"><a class="header" href="#cauliflower-in-soy-sauce">Cauliflower in Soy Sauce</a></h2>
+<ul>
+<li>Cauliflower</li>
+<li>1/4 cup hot vegetable oil</li>
+<li>1/2 cup water</li>
+<li>Salt</li>
+<li>4 teaspoons soy sauce</li>
+<li>2 teaspoons sugar</li>
+<li>1 teaspoon flour</li>
+<li>1 cup flank steak strips (optional)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Cut flowers and cook in skillet in vegetable oil.</li>
+<li>Remove from pan and sauté thin strips of flank steak that have been dredged in flour until brown.</li>
+<li>Add water and salt, steam florets until tender.</li>
+<li>Mix soy sauce, sugar, water, and flour, pour over cauliflower, add meat back in, and stir until thickened.</li>
+</ol>
+<h2 id="green-beans"><a class="header" href="#green-beans">Green Beans</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Remove ends and strings.</li>
+<li>Place in a large iron skillet with some olive oil and 3 sliced garlic cloves.</li>
+<li>Stir on high heat until beans turn bright green, careful not to burn.</li>
+<li>Add 1/2-1 cup water and salt, cover, cook on low heat until tender.</li>
+<li>Do not peek too often, you will let the steam out.</li>
+</ol>
+<h2 id="baked-carrots"><a class="header" href="#baked-carrots">Baked Carrots</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Pare and slice carrots lengthwise.</li>
+<li>Place on double thickness of aluminum foil, dot with butter, salt, and pepper.</li>
+<li>Seal tightly with foil making an airtight package.</li>
+<li>Bake at 400 degrees for 45 minutes to 1 hour.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="salads"><a class="header" href="#salads">Salads</a></h1>
+<h2 id="cole-slaw"><a class="header" href="#cole-slaw">Cole Slaw</a></h2>
+<ul>
+<li>Shave or chop cabbage</li>
+<li>Vinegar</li>
+<li>Sugar</li>
+<li>Salt</li>
+<li>Pepper</li>
+<li>Finely chopped onion (optional)</li>
+<li>Crushed pineapple (drained) or halved green grapes</li>
+<li>Mayonnaise</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sprinkle cabbage with vinegar, sugar, salt, and pepper. Add finely chopped onion if desired.</li>
+<li>Add crushed pineapple or halved green grapes.</li>
+<li>Mix in mayonnaise or mix mayo, vinegar, and sugar to taste beforehand.</li>
+</ol>
+<h2 id="creamed-cucumbers"><a class="header" href="#creamed-cucumbers">Creamed Cucumbers</a></h2>
+<ul>
+<li>Cucumbers (pared and sliced)</li>
+<li>Vinegar</li>
+<li>Sugar</li>
+<li>Salt</li>
+<li>Pepper</li>
+<li>Chopped green onions</li>
+<li>Sour cream</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sprinkle cucumbers with vinegar and a small amount of sugar.</li>
+<li>Add salt, pepper, and chopped green onions.</li>
+<li>Mix well with sour cream.</li>
+</ol>
+<h2 id="layered-salad"><a class="header" href="#layered-salad">Layered Salad</a></h2>
+<ul>
+<li>Shredded lettuce</li>
+<li>Green peppers</li>
+<li>Onions</li>
+<li>Water chestnuts</li>
+<li>Bacon bits</li>
+<li>Frozen chopped spinach</li>
+<li>Frozen peas</li>
+<li>Mayonnaise</li>
+<li>Grated cheese (Monterey Jack, cheddar, Parmesan, or mozzarella)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>In a large dish (lasagna type or baking pan), spread shredded lettuce and add layers of desired ingredients.</li>
+<li>Cover the whole top with a 1/2-inch layer of mayonnaise and sprinkle grated cheese on top.</li>
+<li>Refrigerate for 24 hours.</li>
+<li>Mix to serve.</li>
+</ol>
+<h2 id="chicken-salad-tujague"><a class="header" href="#chicken-salad-tujague">Chicken Salad Tujague</a></h2>
+<ul>
+<li>8 chicken breasts</li>
+<li>Canned chicken broth or stock</li>
+<li>1 teaspoon salt</li>
+<li>1/4 teaspoon pepper</li>
+<li>Italian salad dressing</li>
+<li>2 cups diced celery</li>
+<li>1 finely chopped shallot</li>
+<li>2 chopped hard-boiled eggs</li>
+<li>1/4 cup toasted almond slivers</li>
+<li>1/2 cup mayonnaise</li>
+<li>1/4 cup mustard</li>
+<li>Salt and pepper to taste</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Simmer chicken breasts in canned chicken broth or stock with salt and pepper until tender (20-25 minutes).</li>
+<li>Remove skin and bones, cut chicken into bite-sized pieces.</li>
+<li>Marinate in Italian salad dressing for 5-6 hours or overnight.</li>
+<li>Mix with diced celery, chopped shallot, chopped hard-boiled eggs, toasted almond slivers, mayonnaise, mustard, salt, and pepper to taste.</li>
+<li>Chill before serving.</li>
+</ol>
+<h2 id="peaches-pears-and-cream-cheese"><a class="header" href="#peaches-pears-and-cream-cheese">Peaches, Pears, and Cream Cheese</a></h2>
+<ul>
+<li>Canned peach halves</li>
+<li>Canned pear halves</li>
+<li>Cream cheese</li>
+<li>Chopped pecans or walnuts</li>
+<li>Mayonnaise</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Cover dish with lettuce, place on tray canned peach and pear halves.</li>
+<li>Roll a spoonful of cream cheese between palms to shape balls.</li>
+<li>Roll balls in chopped pecans or walnuts.</li>
+<li>Place balls in the cavity of each fruit half and top with a small blob of mayonnaise.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="party-foods-and-dips"><a class="header" href="#party-foods-and-dips">Party Foods and Dips</a></h1>
+<h2 id="clam-dip"><a class="header" href="#clam-dip">Clam Dip</a></h2>
+<ul>
+<li>Large round loaf of French bread</li>
+<li>3 cans minced clams</li>
+<li>3 packs cream cheese</li>
+<li>1/2 cup sliced scallions</li>
+<li>1/2 cup clam juice from 1 lemon</li>
+<li>4 tablespoons chopped parsley</li>
+<li>1/2 teaspoon Tabasco</li>
+<li>Salt and pepper</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Cut top off of the bread, hollow out bread to 1 inch thick, save bread pieces.</li>
+<li>Mix clams, cream cheese, scallions, clam juice, lemon juice, parsley, Tabasco, salt, and pepper.</li>
+<li>Place in hollow bread, replace the top.</li>
+<li>Bake at 250 degrees for 3 hours.</li>
+<li>Toast bread pieces for dipping. Use top and keep tearing from the side as it gets used.</li>
+</ol>
+<h2 id="clam-puff-canapé"><a class="header" href="#clam-puff-canapé">Clam Puff Canapé</a></h2>
+<ul>
+<li>1 can minced clams (drained)</li>
+<li>8 oz cream cheese</li>
+<li>Onion and garlic salt</li>
+<li>Pepper</li>
+<li>Salt</li>
+<li>Worcestershire</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix clams with cream cheese, onion and garlic salt, pepper, salt, and Worcestershire.</li>
+<li>Prepare toast squares by removing the crust and rolling with a rolling pin, cut into 4 and toast lightly.</li>
+<li>Spread clam mix, sprinkle paprika, and broil on the bottom rack of the oven until brown.</li>
+</ol>
+<h2 id="dill-dip"><a class="header" href="#dill-dip">Dill Dip</a></h2>
+<ul>
+<li>1 pint sour cream</li>
+<li>1 pint mayonnaise</li>
+<li>3 tablespoons dill weed</li>
+<li>3 tablespoons minced onion</li>
+<li>2 tablespoons dried thyme</li>
+<li>2 tablespoons parsley</li>
+<li>3 teaspoons Spice Islands Beau Monde seasoning</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix well and let stand for a minimum of 1 hour.</li>
+<li>Refrigerate.</li>
+<li>This is especially for crudités.</li>
+</ol>
+<h2 id="fruit-dip"><a class="header" href="#fruit-dip">Fruit Dip</a></h2>
+<ul>
+<li>8 oz Philadelphia cream cheese</li>
+<li>7 oz marshmallow cream</li>
+<li>2 teaspoons grated orange rind</li>
+<li>1 teaspoon lemon juice</li>
+<li>Dash of ginger</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Blend well and add food color (1 drop red and 1 drop yellow for a good color).</li>
+<li>Good with strawberries, pineapple, apple.</li>
+</ol>
+<h2 id="spinach-dip"><a class="header" href="#spinach-dip">Spinach Dip</a></h2>
+<ul>
+<li>10 oz pack frozen chopped spinach (thawed and squeezed dry)</li>
+<li>1 1/2 cups sour cream</li>
+<li>1 cup mayonnaise</li>
+<li>1 pack Knorr’s vegetable soup mix</li>
+<li>8 oz can water chestnuts (drained and chopped)</li>
+<li>3 chopped green onions</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Stir together spinach, sour cream, mayonnaise, soup mix, water chestnuts, and green onions.</li>
+<li>Mix well and refrigerate for 2 hours.</li>
+<li>Stir before serving.</li>
+</ol>
+<h2 id="artichoke-balls"><a class="header" href="#artichoke-balls">Artichoke Balls</a></h2>
+<ul>
+<li>1 can artichoke hearts</li>
+<li>1 cup Italian bread crumbs</li>
+<li>2 eggs</li>
+<li>1 clove garlic</li>
+<li>2 tablespoons olive oil</li>
+<li>2 tablespoons lemon juice (or more)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix ingredients well and refrigerate for 4 hours.</li>
+<li>Make small balls and roll in grated Parmesan cheese.</li>
+<li>Place on a baking tray and brown in the oven.</li>
+</ol>
+<h2 id="artichoke-squares"><a class="header" href="#artichoke-squares">Artichoke Squares</a></h2>
+<ul>
+<li>2 jars marinated artichokes</li>
+<li>1/2 cup Italian bread crumbs</li>
+<li>8 oz grated Parmesan cheese</li>
+<li>4 eggs</li>
+<li>3 tablespoons water</li>
+<li>1/2 cup finely chopped onion</li>
+<li>Dash of red and black pepper</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Drain and chop hearts (save some juice) and sauté onion in the juice.</li>
+<li>Beat eggs, onion, artichoke hearts, and seasoning.</li>
+<li>Add crumbs and cheese, mix well.</li>
+<li>Spread in greased 9x13x2 pan or Pyrex dish.</li>
+<li>Bake at 350 degrees for 20-30 minutes until set.</li>
+<li>Cut into squares and serve warm.</li>
+</ol>
+<h2 id="boursin-cheese-ball"><a class="header" href="#boursin-cheese-ball">Boursin Cheese Ball</a></h2>
+<ul>
+<li>2 large packs cream cheese</li>
+<li>2 cartons whipped butter</li>
+<li>1/4 teaspoon each of garlic powder, basil, dill weed, oregano</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Soften cheese and butter, beat with seasonings with an electric mixer or food processor.</li>
+<li>Shape into ball (1 or 2) and freeze for 24 hours.</li>
+<li>Roll in chopped parsley or nuts.</li>
+</ol>
+<h2 id="sausage-cheese-balls"><a class="header" href="#sausage-cheese-balls">Sausage Cheese Balls</a></h2>
+<ul>
+<li>1 pack Kraft Coon cheese</li>
+<li>3 cups Bisquick</li>
+<li>1 lb roll uncooked hot sausage</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Melt cheese in a double boiler, break up sausage into cheese and stir gently.</li>
+<li>Stir all into Bisquick and mix well.</li>
+<li>Make walnut-sized balls, place on a baking sheet and freeze.</li>
+<li>Store in a plastic bag.</li>
+<li>Place on a cookie sheet, bake at 350 degrees for 20 minutes.</li>
+<li>Serve hot.</li>
+</ol>
+<h2 id="hot-crab-dip"><a class="header" href="#hot-crab-dip">Hot Crab Dip</a></h2>
+<ul>
+<li>8 oz cream cheese</li>
+<li>1 can crab (Blue Plate)</li>
+<li>1/4 teaspoon curry</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Blend cheese, crab juice, and curry, then mix in crab.</li>
+<li>Heat at 350 degrees for 25 minutes until bubbly.</li>
+<li>Dash of cayenne (optional).</li>
+</ol>
+<h2 id="chicken-liver-pâté"><a class="header" href="#chicken-liver-pâté">Chicken Liver Pâté</a></h2>
+<ul>
+<li>1 lb chicken livers</li>
+<li>3/4 cup sliced mushrooms</li>
+<li>2 sticks butter</li>
+<li>1/4 cup chopped green onions</li>
+<li>1/4 cup cognac</li>
+<li>1 teaspoon salt</li>
+<li>1/4 teaspoon allspice</li>
+<li>1/8 teaspoon ground black pepper</li>
+<li>1/8 teaspoon cayenne</li>
+<li>1/8 teaspoon thyme</li>
+<li>Parsley to decorate</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Wash, dry, and chop livers. Sauté mushrooms in butter for 5 minutes.</li>
+<li>Remove mushrooms and sauté onions, add livers and stir-cook until barely pink (5 minutes).</li>
+<li>Put into a blender or food processor, add mushrooms, cognac, and seasonings.</li>
+<li>If the mix is too thick, add 1-2 tablespoons melted butter.</li>
+<li>Pack into crocks or molds. To serve, decorate with parsley and mushrooms.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="desserts"><a class="header" href="#desserts">Desserts</a></h1>
+<h2 id="make-ahead-tortoni"><a class="header" href="#make-ahead-tortoni">Make Ahead Tortoni</a></h2>
+<ul>
+<li>1/2 cup chopped and toasted almonds</li>
+<li>3 tablespoons melted butter</li>
+<li>1 cup fine vanilla wafer crumbs</li>
+<li>1 teaspoon almond extract</li>
+<li>3 pints vanilla ice cream, slightly soft</li>
+<li>1 jar apricot or peach preserves (12 oz)</li>
+<li>Whipped cream (optional)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Combine almonds, butter, crumbs, and extract, mix well. Save 1/4 cup crumbs for top.</li>
+<li>Line 8-inch square pan with foil.</li>
+<li>Spread half of the mixture over the bottom of the pan.</li>
+<li>Spoon 1/2 ice cream over, spread half of the preserves, repeat and spread reserved crumbs over the top.</li>
+<li>Store in the freezer until ready to serve.</li>
+<li>Before serving, cut into 9 servings and top with whipped cream.</li>
+</ol>
+<h2 id="snowballs"><a class="header" href="#snowballs">Snowballs</a></h2>
+<ul>
+<li>1/2 cup butter</li>
+<li>1/2 cup white sugar</li>
+<li>2 egg yolks</li>
+<li>1 cup crushed pineapple</li>
+<li>1 cup chopped nuts</li>
+<li>2 egg whites, beaten stiff</li>
+<li>Vanilla wafers</li>
+<li>Shredded coconut</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Blend butter, sugar, and egg yolks, beat.</li>
+<li>Mix in crushed pineapple and chopped nuts. Fold in beaten egg whites.</li>
+<li>Make stacks of vanilla wafers with the above mixture between 3 layers of wafers and a cookie on top.</li>
+<li>Refrigerate for 24 hours, then roll each in whipped cream and then shredded coconut. They can be frozen ahead.</li>
+</ol>
+<h2 id="frango-dessert-chocolate-peppermint"><a class="header" href="#frango-dessert-chocolate-peppermint">Frango Dessert (Chocolate Peppermint)</a></h2>
+<ul>
+<li>1 cup plus crushed vanilla wafers</li>
+<li>1 cup real butter</li>
+<li>2 cups powdered sugar</li>
+<li>4 squares semi-sweet chocolate or 4 packs Choco-bake</li>
+<li>4 eggs</li>
+<li>2 teaspoons vanilla</li>
+<li>3/4 teaspoon peppermint extract</li>
+<li>Whipped cream</li>
+<li>Maraschino cherries</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Press 1/2 of the wafers into the bottom of muffin cups (small ones).</li>
+<li>Cream butter and sugar, beat until fluffy. Add eggs and melted chocolate and flavor, beat.</li>
+<li>Spoon into cups, top with the other half of crumbs, and freeze.</li>
+<li>Top with whipped cream and cherries to serve. NO COOKING.</li>
+</ol>
+<h2 id="nut-torte"><a class="header" href="#nut-torte">Nut Torte</a></h2>
+<ul>
+<li>3 egg whites beaten to peaks with 1/2 teaspoon baking powder</li>
+<li>1 cup granulated sugar</li>
+<li>1 teaspoon vanilla</li>
+<li>1 cup graham cracker crumbs</li>
+<li>1 cup finely chopped nuts</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Add sugar and vanilla to beaten egg whites, then fold in cracker crumbs and nuts.</li>
+<li>Place in greased pie dish and bake at 350 degrees for 1/2 hour.</li>
+</ol>
+<h2 id="napolitana-a-heavy-flan"><a class="header" href="#napolitana-a-heavy-flan">Napolitana (A Heavy Flan)</a></h2>
+<ul>
+<li>Sugar for pan or dish</li>
+<li>6 eggs</li>
+<li>1 can Eagle Brand sweetened condensed milk</li>
+<li>Grated lemon rind</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Melt sugar for the pan or dish, tip to distribute and cool well.</li>
+<li>Mix and beat eggs, then add condensed milk, grated lemon rind.</li>
+<li>Bake in a water bath at 350 degrees for 1 hour or more until a straw comes out clean.</li>
+</ol>
+<h2 id="meringues"><a class="header" href="#meringues">Meringues</a></h2>
+<h3 id="my-grandmother-phillips"><a class="header" href="#my-grandmother-phillips">My Grandmother Phillips</a></h3>
+<ul>
+<li>4 egg whites</li>
+<li>1 cup sugar</li>
+<li>1/2 teaspoon cream of tartar</li>
+<li>Vanilla</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Beat until stiff, 6 egg whites adding sugar, cream of tartar, and vinegar gradually.</li>
+<li>Turn the oven almost out and bake for 2 hours or bake in a 300-degree oven for 40 minutes if a softer confection is desired.</li>
+</ol>
+<h3 id="alternate-recipe-gammies-writing"><a class="header" href="#alternate-recipe-gammies-writing">Alternate Recipe (Gammie’s Writing)</a></h3>
+<p>Instructions:</p>
+<ol>
+<li>Beat until very stiff, 6 egg whites adding 2 cups sugar and 1 teaspoon cream of tartar, and 1 teaspoon vinegar gradually.</li>
+<li>Turn the oven almost out and bake for 2 hours or bake in a 300-degree oven for 40 minutes if a softer confection is desired.</li>
+</ol>
+<h2 id="chocolate-mousse-aunt-eleanors"><a class="header" href="#chocolate-mousse-aunt-eleanors">Chocolate Mousse (Aunt Eleanor’s)</a></h2>
+<ul>
+<li>1 cup milk</li>
+<li>12 oz chocolate chips</li>
+<li>2 egg whites</li>
+<li>1-2 teaspoons vanilla</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Bring milk to just before boiling, pour over chocolate chips and blend in a blender with egg whites and vanilla.</li>
+<li>Pour into cups.</li>
+</ol>
+<h2 id="opals-cheesecake"><a class="header" href="#opals-cheesecake">Opal’s Cheesecake</a></h2>
+<h3 id="crust"><a class="header" href="#crust">Crust</a></h3>
+<ul>
+<li>1 1/3 cups graham cracker crumbs</li>
+<li>1/2 cup melted butter</li>
+<li>1/3 cup sugar</li>
+<li>1/2 teaspoon cinnamon</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Press into pie dish and bake at 360 degrees.</li>
+</ol>
+<h3 id="filling"><a class="header" href="#filling">Filling</a></h3>
+<ul>
+<li>2 eggs</li>
+<li>1/3 cup sugar</li>
+<li>1 1/2 teaspoons vanilla</li>
+<li>1/2 lemon rind grated</li>
+<li>11 oz cream cheese</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix and bake until set at 360 degrees.</li>
+<li>Make a topping of 1-2 cups sour cream, 2 tablespoons sugar, and 1 teaspoon vanilla.</li>
+<li>Put on top after set and return to oven for 5 minutes.</li>
+</ol>
+<h2 id="willard-callahans-cheesecake-my-favorite"><a class="header" href="#willard-callahans-cheesecake-my-favorite">Willard Callahan’s Cheesecake (My Favorite)</a></h2>
+<ul>
+<li>1 large pack cream cheese (8 oz)</li>
+<li>1/2 pint sour cream</li>
+<li>1/2 cup lemon juice (add last in drops)</li>
+<li>1 can Eagle Brand sweetened condensed milk</li>
+<li>1 teaspoon almond extract</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Whip slowly cream cheese until smooth by hand mixer (not electric mixer).</li>
+<li>Add flavoring and milk, blend slowly, add lemon juice until mixture thickens.</li>
+</ol>
+<h2 id="graham-cracker-crust"><a class="header" href="#graham-cracker-crust">Graham Cracker Crust</a></h2>
+<ul>
+<li>1 cup graham crumbs (about 30 crackers)</li>
+<li>4 tablespoons soft butter</li>
+<li>2 tablespoons sugar</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Press into pie plate.</li>
+</ol>
+<h2 id="rice-pudding"><a class="header" href="#rice-pudding">Rice Pudding</a></h2>
+<ul>
+<li>2 cups cooked white rice</li>
+<li>1/2 teaspoon salt</li>
+<li>2 beaten eggs</li>
+<li>1 cup sugar</li>
+<li>1/2 nutmeg grated</li>
+<li>2 cups milk</li>
+<li>2 tablespoons melted butter</li>
+<li>1/2 cup raisins</li>
+<li>Cinnamon</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Beat eggs and mix rice, sugar, then add milk, butter, raisins, and cinnamon.</li>
+<li>Bake at 350 degrees for about 1/2 hour.</li>
+</ol>
+<h2 id="orange-tea-cookies"><a class="header" href="#orange-tea-cookies">Orange Tea Cookies</a></h2>
+<ul>
+<li>1 cup all-purpose flour</li>
+<li>1/2 cup shortening</li>
+<li>1/3 cup sugar</li>
+<li>1 egg</li>
+<li>1/2 teaspoon vanilla</li>
+<li>1 tablespoon finely grated orange peel</li>
+<li>1 tablespoon finely grated lemon peel</li>
+<li>1/2 cup finely chopped nut meats</li>
+<li>1/3 teaspoon salt</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sift flour and remeasure. Cream shortening and sugar until light and fluffy.</li>
+<li>Add egg yolk and beat again. Add flavoring, salt, and peel, stirring until combined and add flour gradually.</li>
+<li>Shape dough into ball size of small walnuts. Roll balls in beaten egg white, then in nut meats.</li>
+<li>Place on a lightly greased cookie sheet and flatten with a spatula or knife blade.</li>
+<li>Bake until well-browned.</li>
+<li>Remove immediately from the sheet and cool. Makes 1 1/2 dozen cookies 2 inches in diameter.</li>
+</ol>
+<h2 id="date-nut-torte"><a class="header" href="#date-nut-torte">Date Nut Torte</a></h2>
+<ul>
+<li>1 large cup seeded dates</li>
+<li>1 large cup walnuts</li>
+<li>2 eggs beaten</li>
+<li>2 tablespoons flour</li>
+<li>1 large tablespoon baking powder</li>
+<li>1/2 cup sugar</li>
+<li>1 teaspoon salt</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Bake in buttered tin for 1/2 hour in a slow oven. Serve with whipped cream.</li>
+</ol>
+<h2 id="bettys-pumpkin-pie-filling"><a class="header" href="#bettys-pumpkin-pie-filling">Betty’s Pumpkin Pie Filling</a></h2>
+<ul>
+<li>1 3/4 cups pumpkin</li>
+<li>1/2 teaspoon cinnamon</li>
+<li>1/2 teaspoon nutmeg</li>
+<li>1/4 teaspoon powdered ginger</li>
+<li>1 teaspoon salt</li>
+<li>3/4 cup sugar</li>
+<li>2 eggs</li>
+<li>1 cup milk</li>
+<li>2 tablespoons melted butter</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Pour into pie crust and bake in a 425-degree oven for 30 minutes.</li>
+</ol>
+<h2 id="gammies-pumpkin-pie"><a class="header" href="#gammies-pumpkin-pie">Gammie’s Pumpkin Pie</a></h2>
+<ul>
+<li>1 cup sugar</li>
+<li>1 1/2 cups pumpkin</li>
+<li>2 eggs</li>
+<li>1 tablespoon ginger</li>
+<li>1 teaspoon cinnamon</li>
+<li>1/4 teaspoon nutmeg</li>
+<li>Dash cloves</li>
+<li>1/2 cup milk</li>
+<li>1/2 teaspoon salt</li>
+</ul>
+<h2 id="vanilla-custard-filling"><a class="header" href="#vanilla-custard-filling">Vanilla Custard Filling</a></h2>
+<ul>
+<li>1/2-3/4 cup sugar</li>
+<li>1/3 cup flour</li>
+<li>1/4 teaspoon salt</li>
+<li>2 cups scalded milk</li>
+<li>2 slightly beaten eggs or 4 yolks</li>
+<li>1 teaspoon vanilla</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Add and stir until smooth and thick.</li>
+<li>Stir while cooking in a double boiler until thick. Cool and add vanilla.</li>
+<li>Optional: add chopped nuts or 1 tablespoon rum, sherry, etc.</li>
+</ol>
+<h2 id="bread-pudding-aunt-eleanor"><a class="header" href="#bread-pudding-aunt-eleanor">Bread Pudding (Aunt Eleanor)</a></h2>
+<ul>
+<li>3 slices white bread, buttered and cubed</li>
+<li>3/4 cup brown sugar</li>
+<li>2/3 cup raisins or currants</li>
+<li>3 eggs</li>
+<li>2 1/2 cups milk</li>
+<li>2 teaspoons vanilla</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Put sugar in the top portion of a double boiler.</li>
+<li>Sprinkle raisins on top of sugar, then bread cubes.</li>
+<li>Beat eggs in a bowl and add milk and vanilla.</li>
+<li>Pour over all. Bring water in the bottom of the double boiler to a simmer.</li>
+<li>Cover with lid and cook for 1 hour. DO NOT PEEK!</li>
+</ol>
+<h2 id="hot-milk-sponge-cake"><a class="header" href="#hot-milk-sponge-cake">Hot Milk Sponge Cake</a></h2>
+<p>Favorite of my father, made by my grandmother Phillips</p>
+<ul>
+<li>4 eggs</li>
+<li>2 cups sugar</li>
+<li>2 cups flour</li>
+<li>2 teaspoons baking powder</li>
+<li>1/2 teaspoon salt</li>
+<li>2 tablespoons butter</li>
+<li>1 1/2 teaspoons vanilla</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Beat eggs until thick and lemon-colored. Slowly add sugar and beat at medium speed for 4-5 minutes.</li>
+<li>Stir flour, baking powder, and salt together. Add to the egg mixture and stir until just blended.</li>
+<li>Heat milk and butter until butter melts. Stir into the batter. Mix well.</li>
+<li>Put into the pan and bake at 350 degrees for 20-30 minutes in an 11x13 inch pan. Can be halved for a 9x9 pan.</li>
+</ol>
+<h2 id="mandchens-almond-cookies"><a class="header" href="#mandchens-almond-cookies">Mandchen's Almond Cookies</a></h2>
+<ul>
+<li>1 cup butter</li>
+<li>1 1/2 cups sugar</li>
+<li>1/4 teaspoon salt</li>
+<li>2 tablespoons grated lemon rind</li>
+<li>1 1/3 cups sifted flour</li>
+<li>1/2 lb unblanched almonds, grated (not ground)</li>
+<li>1 teaspoon vanilla</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Cream butter and sugar well. Add the rest of the ingredients, mixing thoroughly.</li>
+<li>Chill for 1 hour and roll 1/8 inch thick on a well-floured surface.</li>
+<li>Cut into crescents. Cook on an ungreased sheet at 375 degrees until tan-colored. Ice while warm.</li>
+</ol>
+<h3 id="icing"><a class="header" href="#icing">Icing</a></h3>
+<ul>
+<li>1 1/2 cups powdered sugar</li>
+<li>2 tablespoons boiling water</li>
+<li>1 teaspoon vanilla (thinning when necessary)</li>
+</ul>
+<h2 id="wholesome-oatmeal-cookies"><a class="header" href="#wholesome-oatmeal-cookies">Wholesome Oatmeal Cookies</a></h2>
+<ul>
+<li>3/4 lb margarine</li>
+<li>1 lb dark brown sugar</li>
+<li>2 eggs</li>
+<li>1/2 cup milk</li>
+<li>2 teaspoons vanilla</li>
+<li>1/3 cup powdered milk</li>
+<li>2 cups whole wheat flour</li>
+<li>2 teaspoons salt</li>
+<li>2 teaspoons soda</li>
+<li>4 cups rolled oats</li>
+<li>2 cups wheat germ</li>
+</ul>
+<h3 id="options"><a class="header" href="#options">Options</a></h3>
+<ul>
+<li>1 cup coconut</li>
+<li>1 cup raisins</li>
+<li>1 cup chopped nuts</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Drop on cookie sheet or refrigerate in rolls and slice.</li>
+<li>Bake at 400 degrees until brown.</li>
+</ol>
+<h2 id="bakers-chocolate-fudge-brownies"><a class="header" href="#bakers-chocolate-fudge-brownies">Bakers Chocolate Fudge Brownies</a></h2>
+<ul>
+<li>4 squares unsweetened chocolate</li>
+<li>1/2 cup butter</li>
+<li>4 eggs</li>
+<li>2 cups sugar</li>
+<li>1 cup flour</li>
+<li>1 teaspoon vanilla</li>
+<li>1 cup chopped nuts</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Melt chocolate and butter. Cool some and beat eggs and sugar until foamy.</li>
+<li>Slowly add cool chocolate, then flour, then vanilla and nuts.</li>
+<li>Bake at 325 degrees for 40 minutes.</li>
+</ol>
+<h2 id="rum-cake"><a class="header" href="#rum-cake">Rum Cake</a></h2>
+<ul>
+<li>1 box yellow or butter cake</li>
+<li>1 pack vanilla instant pudding</li>
+<li>1/2 cup rum</li>
+<li>1/2 cup water</li>
+<li>4 eggs</li>
+<li>1/2 cup chopped pecans</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Beat pudding, cake mix, rum, and water. Add eggs one at a time.</li>
+<li>Spray bundt or angel pan with pan. Cook at 325 degrees for 1 hour.</li>
+<li>Cool 1/2 hour in the pan. Pour glaze into the pan.</li>
+</ol>
+<h3 id="glaze"><a class="header" href="#glaze">Glaze</a></h3>
+<ul>
+<li>1 stick butter</li>
+<li>1 cup sugar</li>
+<li>1/4 cup rum</li>
+<li>1/4 cup water</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Heat together, pour in, and let sit for 1/2 hour before turning out.</li>
+<li>Then dust with powdered sugar.</li>
+</ol>
+<h2 id="carrot-cake"><a class="header" href="#carrot-cake">Carrot Cake</a></h2>
+<ul>
+<li>3 cups grated carrots</li>
+<li>2 cups sugar</li>
+<li>2 teaspoons baking powder</li>
+<li>1 teaspoon salt</li>
+<li>4 eggs</li>
+<li>1 1/2 cups vegetable oil</li>
+<li>2 cups flour</li>
+<li>2 teaspoons cinnamon</li>
+<li>2 teaspoons baking soda</li>
+<li>1 cup chopped pecans</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Cream sugar and oil. Add one egg at a time and beat well.</li>
+<li>Add flour sifted with all dry ingredients except carrots and pecans last.</li>
+<li>Cut wax paper to line pans (I use three layers).</li>
+<li>Bake at 350 degrees for 40 minutes. Cool and frost.</li>
+</ol>
+<h3 id="frosting"><a class="header" href="#frosting">Frosting</a></h3>
+<ul>
+<li>3/4 stick soft butter</li>
+<li>1 box powdered sugar</li>
+<li>2 teaspoons vanilla</li>
+<li>1 pack softened cream cheese (8 oz)</li>
+</ul>
+<h2 id="poppy-seed-cake"><a class="header" href="#poppy-seed-cake">Poppy Seed Cake</a></h2>
+<ul>
+<li>3/4 cup soft shortening or 1/2 cup butter</li>
+<li>1 1/2 cups sugar</li>
+<li>3/4 cup flour</li>
+<li>1/2 cup finely grated orange peel</li>
+<li>1/2 cup finely grated lemon peel</li>
+<li>1/2 cup finely chopped nut meats</li>
+<li>1/3 teaspoon salt</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Grease and flour two 8 or 9-inch pans.</li>
+<li>Soak 1/3 cup poppy seeds in 1/2 cup water for 2 hours. Drain and add to the cream mixture as follows.</li>
+<li>Set aside. Cream until fluffy and add poppy seeds.</li>
+</ol>
+<h3 id="cake"><a class="header" href="#cake">Cake</a></h3>
+<ul>
+<li>2 1/2 cups cake flour or 2 cups all-purpose flour</li>
+<li>2 teaspoons baking powder</li>
+<li>1/2 teaspoon salt</li>
+<li>1 cup water</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sift together, add alternating with 1 cup water. Fold in 1/2 cup egg whites, beaten stiffly (4).</li>
+<li>Use custard filling between layers and finish with cooked white frosting.</li>
+<li>This is an old German recipe from Delma Aust. Hint: let the batter stand in the pan for 20 minutes before baking to avoid cracking.</li>
+<li>Bake at 350 degrees for 30 to 35 minutes.</li>
+</ol>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="confections"><a class="header" href="#confections">Confections</a></h1>
+<h2 id="burnt-almonds"><a class="header" href="#burnt-almonds">Burnt Almonds</a></h2>
+<ul>
+<li>2 1/2 cups almonds</li>
+<li>1/4 teaspoon cinnamon</li>
+<li>1 cup sugar</li>
+<li>1/2 cup water</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Heat and stir sugar in a heavy frying pan until dissolved.</li>
+<li>Add nuts and keep stirring until sugar gets cloudy.</li>
+<li>Add water by teaspoonful until sugar melts again.</li>
+<li>Quickly pour onto cookie sheet.</li>
+<li>Break apart as nuts cool.</li>
+</ol>
+<h2 id="stained-glass-candy"><a class="header" href="#stained-glass-candy">Stained Glass Candy</a></h2>
+<ul>
+<li>1 stick margarine</li>
+<li>12 oz. pack semi-sweet chocolate chips</li>
+<li>1/2 to 1 cup chopped pecans or walnuts</li>
+<li>1 pack mini marshmallows</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Melt margarine and chips. Cool.</li>
+<li>Mix in marshmallows and nuts.</li>
+<li>On wax paper, sprinkle powdered sugar liberally.</li>
+<li>Spoon mixture over and shape into log.</li>
+<li>Twist ends and refrigerate.</li>
+<li>Slice to serve.</li>
+</ol>
+<h2 id="popcorn-balls"><a class="header" href="#popcorn-balls">Popcorn Balls</a></h2>
+<ul>
+<li>1 1/3 cups popcorn</li>
+<li>1 cup pecans</li>
+<li>1/2 cup salted peanuts</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>In a large pan, combine 1/2 cup sugar and 1 cup light corn syrup on medium heat, stirring until sugar dissolves.</li>
+<li>Bring to boil, not stirring, and boil for 3 minutes.</li>
+<li>Add 1/2 teaspoon vanilla plus optional color.</li>
+<li>Mix corn and nuts and form into balls.</li>
+</ol>
+<h2 id="another-popcorn-balls"><a class="header" href="#another-popcorn-balls">Another Popcorn Balls</a></h2>
+<ul>
+<li>3 quarts popped corn</li>
+<li>3/4 cup molasses mixed with 1/4 cup white karo syrup</li>
+<li>1/2 cup sugar</li>
+<li>1 tablespoon butter</li>
+<li>1/2 teaspoon salt</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Place popcorn in a large bowl or pan.</li>
+<li>Cook molasses, sugar, butter, and salt until brittle in cold water.</li>
+<li>Pour over corn and stir.</li>
+<li>Rub hands with butter and form.</li>
+<li>Wrap balls with waxed paper to prevent sticking.</li>
+</ol>
+<h2 id="mary-pates-nuts"><a class="header" href="#mary-pates-nuts">Mary Pates Nuts</a></h2>
+<ul>
+<li>1 1/2 cups sugar</li>
+<li>1/3 cup water</li>
+<li>3/4 teaspoon nutmeg</li>
+<li>3/4 teaspoon cinnamon</li>
+<li>1/8 teaspoon salt</li>
+<li>2 cups pecans</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix sugar, water, spices, and salt in a sauce pan. Bring to a boil.</li>
+<li>Cook without stirring until soft ball stage.</li>
+<li>Remove and add pecans.</li>
+<li>Mix until a solid big mass.</li>
+<li>Break apart when cool.</li>
+</ol>
+<h2 id="cooked-white-icing"><a class="header" href="#cooked-white-icing">Cooked White Icing</a></h2>
+<ul>
+<li>2 unbeaten egg whites</li>
+<li>1 1/2 cups sugar</li>
+<li>A dash of salt</li>
+<li>1/3 cup water</li>
+<li>2 teaspoons light karo syrup</li>
+<li>1 teaspoon vanilla</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>In a double boiler, place 2 unbeaten egg whites, 1 1/2 cups sugar, a dash of salt, 1/3 cup water, and 2 teaspoons light karo syrup.</li>
+<li>Beat over boiling water until stiff peaks.</li>
+<li>Remove and add 1 teaspoon vanilla and beat one full minute more.</li>
+</ol>
+<h2 id="aunt-eleanors-almond-cookies"><a class="header" href="#aunt-eleanors-almond-cookies">Aunt Eleanor's Almond Cookies</a></h2>
+<ul>
+<li>7 oz. almond paste</li>
+<li>3/4 cup sugar</li>
+<li>2 small egg whites</li>
+<li>1 tablespoon flour</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Line a cookie sheet with aluminum foil and grease and dust with flour.</li>
+<li>Mix almond paste, sugar, egg whites, and flour.</li>
+<li>Drop on sheet and bake at 325°F for 15 minutes.</li>
+</ol>
+<h2 id="dots-cherry-cheesecakes-individual"><a class="header" href="#dots-cherry-cheesecakes-individual">Dots Cherry Cheesecakes (Individual)</a></h2>
+<ul>
+<li>2 (8 oz.) packs cream cheese</li>
+<li>3/4 cup sugar</li>
+<li>2 eggs</li>
+<li>1 teaspoon lemon juice</li>
+<li>Vanilla wafers</li>
+<li>Cherry pie filling</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Beat cream cheese with sugar, eggs, and lemon juice.</li>
+<li>Place a vanilla wafer in each fluted cupcake cup then fill 3/2 full with mix.</li>
+<li>Bake at 350°F for 15 minutes.</li>
+<li>Cool then top each with 3 cherries from a can of cherry pie filling.</li>
+<li>Makes 24.</li>
+</ol>
+<h2 id="sherry-trifle"><a class="header" href="#sherry-trifle">Sherry Trifle</a></h2>
+<ul>
+<li>1 (8 in.) sponge layer or 10 lady fingers</li>
+<li>3/4 cup raspberry jam</li>
+<li>1/2 cup sherry</li>
+<li>1 can fruit salad</li>
+<li>2 1/2 cups boiled custard or custard dessert mix (I use Bird's)</li>
+<li>1/2 to 1 cup whipped cream</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sandwich the cake or lady fingers with the jam and cut into pieces and arrange in a glass serving dish.</li>
+<li>Moisten the sponge with sherry and some syrup from the fruit.</li>
+<li>Place drained fruit on top.</li>
+<li>Make custard. When it is nearly cool, pour over the fruit.</li>
+<li>Chill. Just before serving, add whipped cream and dot with cherries and nuts.</li>
+<li>Serves 6.</li>
+</ol>
+<h2 id="caramel-cup-custard"><a class="header" href="#caramel-cup-custard">Caramel Cup Custard</a></h2>
+<ul>
+<li>6 egg yolks</li>
+<li>1/2 cup sugar</li>
+<li>1/4 teaspoon salt</li>
+<li>Nutmeg</li>
+<li>1 cup sugar</li>
+<li>Water</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Preheat oven to 350°F.</li>
+<li>Beat egg yolks, 1/2 cup sugar, 1/4 teaspoon salt, and nutmeg.</li>
+<li>Heat 1 cup sugar in a heavy pan until it is melted and golden brown.</li>
+<li>Pour into 6 heat-proof custard dishes and tip each one as you pour to spread the caramel.</li>
+<li>Cool them and then pour in egg mixture.</li>
+<li>Place in a pan of hot water. Bake at 350°F for 45-50 minutes.</li>
+</ol>
+<h2 id="pat-reeds-pralines"><a class="header" href="#pat-reeds-pralines">Pat Reeds Pralines</a></h2>
+<ul>
+<li>1 cup white sugar</li>
+<li>1 cup dark brown sugar</li>
+<li>1/2 cup evaporated milk</li>
+<li>1 cup pecans</li>
+<li>1 teaspoon vanilla</li>
+<li>1/3 stick butter</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix well and cook in a heavy pan until firm ball stage.</li>
+<li>Turn off heat and drop in pecans, vanilla, and butter.</li>
+<li>Beat with a wooden spoon vigorously until thick with a vague whitish caste.</li>
+<li>Drop onto waxed paper or buttered surface.</li>
+<li>If mixture cools too fast and is too thick, warm very gently over hot water.</li>
+<li>Lift when completely cool. Wrap individually with waxed paper and store in a sealed container.</li>
+</ol>
+<h2 id="candied-figs"><a class="header" href="#candied-figs">Candied Figs</a></h2>
+<ul>
+<li>5 lbs. figs</li>
+<li>2 cups sugar</li>
+<li>3/4 cup water</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Prick figs with a fork.</li>
+<li>Put into a 2 qt. pan. Pour boiling water with 2 teaspoons salt over.</li>
+<li>Let stand 10 minutes, drain.</li>
+<li>Then combine above sugar and water.</li>
+<li>Cook slowly for 1 1/2 hours with lid on, let boil before timing that 1 1/2 hours.</li>
+<li>Then pour over figs and refrigerate overnight with lid on.</li>
+<li>2nd day: simmer figs 1 hour uncovered.</li>
+<li>3rd day: same thing.</li>
+<li>Then spread out on racks and cover with cheese cloth outside in sun for 3 days (bring in at night).</li>
+<li>Roll in granulated sugar and store in tin with waxed paper or freeze. There is no candy made on this earth that is better.</li>
+</ol>
+<h2 id="jane-semmes-peanut-brittle"><a class="header" href="#jane-semmes-peanut-brittle">Jane Semmes Peanut Brittle</a></h2>
+<ul>
+<li>1 1/2 cups white sugar</li>
+<li>1/4 cup water</li>
+<li>1/2 cup karo</li>
+<li>Dash of salt</li>
+<li>3 tablespoons butter</li>
+<li>1 teaspoon soda</li>
+<li>1 1/2 cups raw peanuts</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Bring sugar, water, and karo to boil and cook until it spins a thread.</li>
+<li>Add peanuts and continue to cook and stir constantly until syrup turns a golden brown (do not undercook).</li>
+<li>Remove from flame and add butter and soda and stir until blended.</li>
+<li>Pour onto a well-buttered board.</li>
+<li>When cool, remove immediately or it will stick.</li>
+<li>Use a two-quart pan and medium-high heat.</li>
+</ol>
+<h2 id="bomb-or-bombe-or-bomba"><a class="header" href="#bomb-or-bombe-or-bomba">BOMB OR BOMBE OR BOMBA</a></h2>
+<p>This is an Italian ice cream cake that Aunt Eleanor was known for. You can make it GOOD or you can make it good for you. The GOOD is absolutely fabulous and the good for you is wonderful if you have never tasted the GOOD...</p>
+<p>Use a glass mixing bowl...slather it with butter or margarine. Line it with 1/2 inch thick slices of pound cake. Fill all spaces and press edges together..you will need some triangle shapes to make the slices fit.</p>
+<p>The filling will be layers of what you like. The center layer should be vanilla ice cream softened and mixed with nutmeg and chopped maraschino cherries. Some other layers can be chocolate ice cream, peach ice cream, sliced bananas, chocolate flakes (made by spreading melted chocolate bits onto aluminum foil chilling and breaking them up), toasted almond slices, any other ice cream flavor you like...There should be three layers at least. Soften ice cream to add as a layer. Top the last layer with cake slices and press down to make sure there are no empty spaces. Cover and refreeze. When hard again, turn out onto plate by placing in bowl of hot water for 2-3 minutes. With flat top down, frost with whipped cream and Decorate with halved cherries, nuts, whatever you like. Refreeze and remove 10-15 min. before serving. To make it good FOR you, can substitute frozen yogurts for ice cream, angelfood cake and low fat topping. If you frost with low fat topping, wait until just before serving because it "dies". Aunt Eleanor served the slices with hot fudge sauce at the table, but I've never had the nerve to make it THAT GOOD. This just looks like a long recipe..it is actually very easy to do. My favorite is with peach and chocolate ice cream on the top and bottom with the vanilla nutmeg mix in the center, divided with toasted almonds, sliced bananas and chocolate flakes.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Egg Dishes - Sue&#x27;s Cookbook</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="breakfast_baked.html"><strong aria-hidden="true">1.</strong> Breakfast and Baked Foods</a></li><li class="chapter-item expanded "><a href="egg_dishes.html" class="active"><strong aria-hidden="true">2.</strong> Egg Dishes</a></li><li class="chapter-item expanded "><a href="sauces.html"><strong aria-hidden="true">3.</strong> Sauces</a></li><li class="chapter-item expanded "><a href="marinades.html"><strong aria-hidden="true">4.</strong> Marinades and Dressings</a></li><li class="chapter-item expanded "><a href="entres_cassaroles.html"><strong aria-hidden="true">5.</strong> Entres and Cassaroles</a></li><li class="chapter-item expanded "><a href="soups.html"><strong aria-hidden="true">6.</strong> Soups</a></li><li class="chapter-item expanded "><a href="vegis.html"><strong aria-hidden="true">7.</strong> Vegetables</a></li><li class="chapter-item expanded "><a href="salads.html"><strong aria-hidden="true">8.</strong> Salads</a></li><li class="chapter-item expanded "><a href="partyfood_dips.html"><strong aria-hidden="true">9.</strong> Party Food and Dips</a></li><li class="chapter-item expanded "><a href="deserts.html"><strong aria-hidden="true">10.</strong> Deserts</a></li><li class="chapter-item expanded "><a href="confections.html"><strong aria-hidden="true">11.</strong> Confections</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Sue&#x27;s Cookbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="egg-dishes"><a class="header" href="#egg-dishes">Egg Dishes</a></h2>
+<h3 id="basic-omelet"><a class="header" href="#basic-omelet">Basic Omelet</a></h3>
+<ul>
+<li>2 eggs</li>
+<li>1 tablespoon milk or cream</li>
+<li>1/4 teaspoon salt</li>
+<li>Dash of pepper</li>
+<li>1 tablespoon butter</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Beat eggs, milk, etc. with a fork.</li>
+<li>Heat butter in an 8-inch pan and pour in mixture.</li>
+<li>Reduce heat and cook without stirring.</li>
+<li>Lift edges occasionally to keep free.</li>
+<li>Shake pan slightly to see if sticking.</li>
+<li>Fold, fill, and turn or turn and top with:</li>
+</ol>
+<h3 id="ranchero-salsa"><a class="header" href="#ranchero-salsa">Ranchero Salsa</a></h3>
+<ul>
+<li>1/2 cup butter</li>
+<li>6 tablespoons chopped onions</li>
+<li>1/2 teaspoon oregano</li>
+<li>1 clove crushed garlic</li>
+<li>1/4 cup chopped bell pepper</li>
+<li>Jalapeno to taste, finely chopped</li>
+<li>Cilantro to taste</li>
+<li>1 can tomatoes</li>
+<li>2 cubes chicken bouillon</li>
+<li>1 cup boiling water</li>
+</ul>
+<h3 id="shrimp-filling"><a class="header" href="#shrimp-filling">Shrimp Filling</a></h3>
+<ul>
+<li>1 cup boiled shrimp</li>
+<li>1/3 cup chopped shallots</li>
+<li>1/3 cup whole chopped tomatoes</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sauté shrimp and shallots and add tomatoes.</li>
+<li>Simmer for 10 minutes.</li>
+</ol>
+<h3 id="crab-filling"><a class="header" href="#crab-filling">Crab Filling</a></h3>
+<ul>
+<li>1/3 cup crab meat</li>
+<li>1/3 cup shallots</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Break eggs into these.</li>
+</ol>
+<h3 id="baked-sausage-and-eggs"><a class="header" href="#baked-sausage-and-eggs">Baked Sausage and Eggs</a></h3>
+<ul>
+<li>6 slices buttered bread</li>
+<li>1/2 lb hot sausage</li>
+<li>1/2 lb plain sausage</li>
+<li>1 teaspoon prepared mustard</li>
+<li>1 (6 oz) package Swiss cheese (sliced)</li>
+<li>3 eggs</li>
+<li>1/4 teaspoon salt</li>
+<li>Dash of pepper</li>
+<li>1 1/4 cups milk</li>
+<li>3/4 cup half and half</li>
+<li>1 teaspoon Worcestershire sauce</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Arrange bread in a 9x13 pyrex dish.</li>
+<li>Sauté sausage into crumbs.</li>
+<li>Add mustard and sprinkle over bread.</li>
+<li>Layer cheese.</li>
+<li>Combine rest of ingredients - beat well and pour over cheese.</li>
+<li>Bake at 350 degrees for 30-40 minutes. Serves 8.</li>
+</ol>
+<h3 id="baked-ham-and-eggs"><a class="header" href="#baked-ham-and-eggs">Baked Ham and Eggs</a></h3>
+<p>Instructions:</p>
+<ol>
+<li>Spray dish or pan, line it with sliced ham.</li>
+<li>Place slices of tomatoes on ham (1 per person).</li>
+<li>Beat and pour over 2 eggs per person and place on top 1 slice American cheese per person.</li>
+<li>Bake until set at 350 degrees.</li>
+<li>Cut into squares to serve after cooling for 5-10 minutes.</li>
+</ol>
+<h3 id="eggs-sardou-brennans"><a class="header" href="#eggs-sardou-brennans">Eggs Sardou (Brennan's)</a></h3>
+<ul>
+<li>1 cup creamed spinach (hot)</li>
+<li>2 artichoke bottoms warmed in salted water</li>
+<li>2 eggs poached</li>
+<li>3/4 cup hollandaise sauce</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Place spinach first then artichoke bottoms, eggs, and sauce.</li>
+</ol>
+<h3 id="eggs-newport"><a class="header" href="#eggs-newport">Eggs Newport</a></h3>
+<ul>
+<li>1 can condensed cream of mushroom soup</li>
+<li>1/2 cup mayonnaise</li>
+<li>1/2 cup milk</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Gradually add milk, stirring until well blended.</li>
+<li>Slice 6 hard-boiled eggs.</li>
+<li>Layer egg slices and mayo sauce in quart baking dish.</li>
+<li>Sprinkle crumbled crisp bacon around edge.</li>
+<li>Bake at 350 degrees for 20 minutes. Serves 4.</li>
+</ol>
+<h3 id="kays-eggs"><a class="header" href="#kays-eggs">Kay's Eggs</a></h3>
+<ul>
+<li>1 large pack cream cheese</li>
+<li>1 stick butter</li>
+<li>1 dozen eggs</li>
+<li>1/2 cup dry white wine</li>
+<li>Salt and pepper</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Melt butter and cream cheese on low heat in large skillet or chafing dish.</li>
+<li>Beat eggs with whisk and add to skillet.</li>
+<li>When eggs are set, add wine and salt and pepper.</li>
+<li>Continue cooking until eggs are firm but not hard, about 10 minutes. Serves 6.</li>
+</ol>
+<p>Note: Can do 2-3 hours ahead.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="breakfast_baked.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="sauces.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="breakfast_baked.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="sauces.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

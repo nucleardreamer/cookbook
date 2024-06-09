@@ -1,0 +1,401 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Party Food and Dips - Sue&#x27;s Cookbook</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="breakfast_baked.html"><strong aria-hidden="true">1.</strong> Breakfast and Baked Foods</a></li><li class="chapter-item expanded "><a href="egg_dishes.html"><strong aria-hidden="true">2.</strong> Egg Dishes</a></li><li class="chapter-item expanded "><a href="sauces.html"><strong aria-hidden="true">3.</strong> Sauces</a></li><li class="chapter-item expanded "><a href="marinades.html"><strong aria-hidden="true">4.</strong> Marinades and Dressings</a></li><li class="chapter-item expanded "><a href="entres_cassaroles.html"><strong aria-hidden="true">5.</strong> Entres and Cassaroles</a></li><li class="chapter-item expanded "><a href="soups.html"><strong aria-hidden="true">6.</strong> Soups</a></li><li class="chapter-item expanded "><a href="vegis.html"><strong aria-hidden="true">7.</strong> Vegetables</a></li><li class="chapter-item expanded "><a href="salads.html"><strong aria-hidden="true">8.</strong> Salads</a></li><li class="chapter-item expanded "><a href="partyfood_dips.html" class="active"><strong aria-hidden="true">9.</strong> Party Food and Dips</a></li><li class="chapter-item expanded "><a href="deserts.html"><strong aria-hidden="true">10.</strong> Deserts</a></li><li class="chapter-item expanded "><a href="confections.html"><strong aria-hidden="true">11.</strong> Confections</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Sue&#x27;s Cookbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="party-foods-and-dips"><a class="header" href="#party-foods-and-dips">Party Foods and Dips</a></h1>
+<h2 id="clam-dip"><a class="header" href="#clam-dip">Clam Dip</a></h2>
+<ul>
+<li>Large round loaf of French bread</li>
+<li>3 cans minced clams</li>
+<li>3 packs cream cheese</li>
+<li>1/2 cup sliced scallions</li>
+<li>1/2 cup clam juice from 1 lemon</li>
+<li>4 tablespoons chopped parsley</li>
+<li>1/2 teaspoon Tabasco</li>
+<li>Salt and pepper</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Cut top off of the bread, hollow out bread to 1 inch thick, save bread pieces.</li>
+<li>Mix clams, cream cheese, scallions, clam juice, lemon juice, parsley, Tabasco, salt, and pepper.</li>
+<li>Place in hollow bread, replace the top.</li>
+<li>Bake at 250 degrees for 3 hours.</li>
+<li>Toast bread pieces for dipping. Use top and keep tearing from the side as it gets used.</li>
+</ol>
+<h2 id="clam-puff-canapé"><a class="header" href="#clam-puff-canapé">Clam Puff Canapé</a></h2>
+<ul>
+<li>1 can minced clams (drained)</li>
+<li>8 oz cream cheese</li>
+<li>Onion and garlic salt</li>
+<li>Pepper</li>
+<li>Salt</li>
+<li>Worcestershire</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix clams with cream cheese, onion and garlic salt, pepper, salt, and Worcestershire.</li>
+<li>Prepare toast squares by removing the crust and rolling with a rolling pin, cut into 4 and toast lightly.</li>
+<li>Spread clam mix, sprinkle paprika, and broil on the bottom rack of the oven until brown.</li>
+</ol>
+<h2 id="dill-dip"><a class="header" href="#dill-dip">Dill Dip</a></h2>
+<ul>
+<li>1 pint sour cream</li>
+<li>1 pint mayonnaise</li>
+<li>3 tablespoons dill weed</li>
+<li>3 tablespoons minced onion</li>
+<li>2 tablespoons dried thyme</li>
+<li>2 tablespoons parsley</li>
+<li>3 teaspoons Spice Islands Beau Monde seasoning</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix well and let stand for a minimum of 1 hour.</li>
+<li>Refrigerate.</li>
+<li>This is especially for crudités.</li>
+</ol>
+<h2 id="fruit-dip"><a class="header" href="#fruit-dip">Fruit Dip</a></h2>
+<ul>
+<li>8 oz Philadelphia cream cheese</li>
+<li>7 oz marshmallow cream</li>
+<li>2 teaspoons grated orange rind</li>
+<li>1 teaspoon lemon juice</li>
+<li>Dash of ginger</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Blend well and add food color (1 drop red and 1 drop yellow for a good color).</li>
+<li>Good with strawberries, pineapple, apple.</li>
+</ol>
+<h2 id="spinach-dip"><a class="header" href="#spinach-dip">Spinach Dip</a></h2>
+<ul>
+<li>10 oz pack frozen chopped spinach (thawed and squeezed dry)</li>
+<li>1 1/2 cups sour cream</li>
+<li>1 cup mayonnaise</li>
+<li>1 pack Knorr’s vegetable soup mix</li>
+<li>8 oz can water chestnuts (drained and chopped)</li>
+<li>3 chopped green onions</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Stir together spinach, sour cream, mayonnaise, soup mix, water chestnuts, and green onions.</li>
+<li>Mix well and refrigerate for 2 hours.</li>
+<li>Stir before serving.</li>
+</ol>
+<h2 id="artichoke-balls"><a class="header" href="#artichoke-balls">Artichoke Balls</a></h2>
+<ul>
+<li>1 can artichoke hearts</li>
+<li>1 cup Italian bread crumbs</li>
+<li>2 eggs</li>
+<li>1 clove garlic</li>
+<li>2 tablespoons olive oil</li>
+<li>2 tablespoons lemon juice (or more)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix ingredients well and refrigerate for 4 hours.</li>
+<li>Make small balls and roll in grated Parmesan cheese.</li>
+<li>Place on a baking tray and brown in the oven.</li>
+</ol>
+<h2 id="artichoke-squares"><a class="header" href="#artichoke-squares">Artichoke Squares</a></h2>
+<ul>
+<li>2 jars marinated artichokes</li>
+<li>1/2 cup Italian bread crumbs</li>
+<li>8 oz grated Parmesan cheese</li>
+<li>4 eggs</li>
+<li>3 tablespoons water</li>
+<li>1/2 cup finely chopped onion</li>
+<li>Dash of red and black pepper</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Drain and chop hearts (save some juice) and sauté onion in the juice.</li>
+<li>Beat eggs, onion, artichoke hearts, and seasoning.</li>
+<li>Add crumbs and cheese, mix well.</li>
+<li>Spread in greased 9x13x2 pan or Pyrex dish.</li>
+<li>Bake at 350 degrees for 20-30 minutes until set.</li>
+<li>Cut into squares and serve warm.</li>
+</ol>
+<h2 id="boursin-cheese-ball"><a class="header" href="#boursin-cheese-ball">Boursin Cheese Ball</a></h2>
+<ul>
+<li>2 large packs cream cheese</li>
+<li>2 cartons whipped butter</li>
+<li>1/4 teaspoon each of garlic powder, basil, dill weed, oregano</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Soften cheese and butter, beat with seasonings with an electric mixer or food processor.</li>
+<li>Shape into ball (1 or 2) and freeze for 24 hours.</li>
+<li>Roll in chopped parsley or nuts.</li>
+</ol>
+<h2 id="sausage-cheese-balls"><a class="header" href="#sausage-cheese-balls">Sausage Cheese Balls</a></h2>
+<ul>
+<li>1 pack Kraft Coon cheese</li>
+<li>3 cups Bisquick</li>
+<li>1 lb roll uncooked hot sausage</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Melt cheese in a double boiler, break up sausage into cheese and stir gently.</li>
+<li>Stir all into Bisquick and mix well.</li>
+<li>Make walnut-sized balls, place on a baking sheet and freeze.</li>
+<li>Store in a plastic bag.</li>
+<li>Place on a cookie sheet, bake at 350 degrees for 20 minutes.</li>
+<li>Serve hot.</li>
+</ol>
+<h2 id="hot-crab-dip"><a class="header" href="#hot-crab-dip">Hot Crab Dip</a></h2>
+<ul>
+<li>8 oz cream cheese</li>
+<li>1 can crab (Blue Plate)</li>
+<li>1/4 teaspoon curry</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Blend cheese, crab juice, and curry, then mix in crab.</li>
+<li>Heat at 350 degrees for 25 minutes until bubbly.</li>
+<li>Dash of cayenne (optional).</li>
+</ol>
+<h2 id="chicken-liver-pâté"><a class="header" href="#chicken-liver-pâté">Chicken Liver Pâté</a></h2>
+<ul>
+<li>1 lb chicken livers</li>
+<li>3/4 cup sliced mushrooms</li>
+<li>2 sticks butter</li>
+<li>1/4 cup chopped green onions</li>
+<li>1/4 cup cognac</li>
+<li>1 teaspoon salt</li>
+<li>1/4 teaspoon allspice</li>
+<li>1/8 teaspoon ground black pepper</li>
+<li>1/8 teaspoon cayenne</li>
+<li>1/8 teaspoon thyme</li>
+<li>Parsley to decorate</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Wash, dry, and chop livers. Sauté mushrooms in butter for 5 minutes.</li>
+<li>Remove mushrooms and sauté onions, add livers and stir-cook until barely pink (5 minutes).</li>
+<li>Put into a blender or food processor, add mushrooms, cognac, and seasonings.</li>
+<li>If the mix is too thick, add 1-2 tablespoons melted butter.</li>
+<li>Pack into crocks or molds. To serve, decorate with parsley and mushrooms.</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="salads.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="deserts.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="salads.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="deserts.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

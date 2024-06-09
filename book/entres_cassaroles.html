@@ -1,0 +1,677 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Entres and Cassaroles - Sue&#x27;s Cookbook</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded "><a href="breakfast_baked.html"><strong aria-hidden="true">1.</strong> Breakfast and Baked Foods</a></li><li class="chapter-item expanded "><a href="egg_dishes.html"><strong aria-hidden="true">2.</strong> Egg Dishes</a></li><li class="chapter-item expanded "><a href="sauces.html"><strong aria-hidden="true">3.</strong> Sauces</a></li><li class="chapter-item expanded "><a href="marinades.html"><strong aria-hidden="true">4.</strong> Marinades and Dressings</a></li><li class="chapter-item expanded "><a href="entres_cassaroles.html" class="active"><strong aria-hidden="true">5.</strong> Entres and Cassaroles</a></li><li class="chapter-item expanded "><a href="soups.html"><strong aria-hidden="true">6.</strong> Soups</a></li><li class="chapter-item expanded "><a href="vegis.html"><strong aria-hidden="true">7.</strong> Vegetables</a></li><li class="chapter-item expanded "><a href="salads.html"><strong aria-hidden="true">8.</strong> Salads</a></li><li class="chapter-item expanded "><a href="partyfood_dips.html"><strong aria-hidden="true">9.</strong> Party Food and Dips</a></li><li class="chapter-item expanded "><a href="deserts.html"><strong aria-hidden="true">10.</strong> Deserts</a></li><li class="chapter-item expanded "><a href="confections.html"><strong aria-hidden="true">11.</strong> Confections</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Sue&#x27;s Cookbook</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="entrees-and-casseroles"><a class="header" href="#entrees-and-casseroles">Entrees and Casseroles</a></h1>
+<h2 id="meat-loaf---ann-landers-recipe"><a class="header" href="#meat-loaf---ann-landers-recipe">Meat Loaf - Ann Landers Recipe</a></h2>
+<ul>
+<li>2 lb ground beef or turkey (add soy sauce to turkey for color)</li>
+<li>2 eggs</li>
+<li>3/4 cup catsup</li>
+<li>1 tablespoon MSG</li>
+<li>1 pack onion soup</li>
+<li>1/2 cup warm water</li>
+<li>1/2 cup dry bread crumbs</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix and pat into meatloaf pan or dish.</li>
+<li>Cover with 2 strips of bacon and 1 8 oz can tomato sauce.</li>
+<li>Bake at 350 degrees for 1 hour.</li>
+</ol>
+<h2 id="beef-burgundy"><a class="header" href="#beef-burgundy">Beef Burgundy</a></h2>
+<ul>
+<li>2 1/2 - 3 lbs stew meat</li>
+<li>1 can cream of celery soup</li>
+<li>1 can cream of mushroom soup</li>
+<li>1 can cream of chicken soup</li>
+<li>1/2 pack Lipton's onion soup mix</li>
+<li>1 cup Burgundy wine</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Mix all ingredients and bake at 350 degrees for 2 1/2-3 hours in a covered casserole dish.</li>
+</ol>
+<h2 id="stuffed-french-bread"><a class="header" href="#stuffed-french-bread">Stuffed French Bread</a></h2>
+<ul>
+<li>1/2 lb sausage</li>
+<li>1/2 lb ground beef</li>
+<li>1 chopped onion</li>
+<li>1/3 cup water</li>
+<li>1 egg</li>
+<li>1/2 teaspoon salt</li>
+<li>1/8 teaspoon pepper</li>
+<li>1/2 teaspoon yellow mustard</li>
+<li>2 tablespoons parsley</li>
+<li>2 teaspoons sausage mix</li>
+<li>2 tablespoons butter</li>
+<li>2 cloves garlic</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Cook sausage in skillet, crumble and add ground beef and onion until browned.</li>
+<li>Cut ends and split two loaves of brown and serve French bread.</li>
+<li>Hollow out and mix crumbs with water, egg, parsley, mustard, salt, pepper, and sausage mix.</li>
+<li>Pack shells and replace ends, skewer in place.</li>
+<li>Crush garlic and add to butter, brush on outside and bake at 400 degrees for 15-20 minutes.</li>
+<li>Cut into 2-inch slices to serve.</li>
+</ol>
+<h2 id="veal-in-sauterne-saucewild-rice"><a class="header" href="#veal-in-sauterne-saucewild-rice">Veal in Sauterne Sauce/Wild Rice</a></h2>
+<ul>
+<li>1 1/2 lb veal (thinly cut and pounded)</li>
+<li>3 tablespoons butter</li>
+<li>2 tablespoons flour</li>
+<li>1 cup chicken broth or bouillon</li>
+<li>1/2 cup Sauterne wine</li>
+<li>1/2 teaspoon marjoram</li>
+<li>Salt and pepper</li>
+<li>10 oz wild rice</li>
+<li>8 oz hearts of artichoke (quartered)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sauté veal in butter, remove and set aside.</li>
+<li>Blend in flour, add broth, wine, marjoram, salt, and pepper.</li>
+<li>Heat and stir until sauce thickens and is smooth.</li>
+<li>Spread in casserole, add wild rice and scatter artichokes.</li>
+<li>Place veal on top with any accumulation of drippings and pour sauce on top.</li>
+<li>Bake at 350 degrees for 25-30 minutes.</li>
+</ol>
+<h2 id="tamale-pie---ethel-thayer"><a class="header" href="#tamale-pie---ethel-thayer">Tamale Pie - Ethel Thayer</a></h2>
+<ul>
+<li>1 1/2 lb ground chuck or turkey (add some oil to turkey)</li>
+<li>1 large can tomatoes</li>
+<li>1 medium onion (chopped)</li>
+<li>1 teaspoon salt</li>
+<li>1/4 teaspoon garlic powder</li>
+<li>1/8 teaspoon pepper</li>
+<li>1 small can pitted black olives</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Brown meat and add the rest of the ingredients. Boil uncovered for 20 minutes.</li>
+<li>Sauté 8 tortillas (halved) in 1/4 cup oil and drain.</li>
+<li>Mix 1 egg with a carton of small curd cottage cheese.</li>
+<li>In a 3-quart casserole, layer as follows: 1/3 of meat, then 1/2 of the tortillas, then 1/2 of the cottage cheese mix, and a layer of jack cheese.</li>
+<li>Repeat again ending with meat, then crushed fritos or tortilla chips on top with grated cheddar cheese.</li>
+<li>Bake for 20 minutes at 350 degrees.</li>
+</ol>
+<h2 id="braised-lamb-shanks"><a class="header" href="#braised-lamb-shanks">Braised Lamb Shanks</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Sprig them with slivered garlic, then rub them with salt, pepper, and curry powder.</li>
+<li>Dredge in flour and place shanks on a rack in a pan and in the bottom of the pan.</li>
+<li>Brown at 450 degrees for 15-20 minutes.</li>
+<li>Put some water in the pan and cover closely.</li>
+<li>Turn down heat to 325 and cook for a total of 2 1/2 hours.</li>
+<li>In the last 15 minutes, remove cover or foil and glaze with chutney.</li>
+</ol>
+<h2 id="chuck-roast---latin-style"><a class="header" href="#chuck-roast---latin-style">Chuck Roast - Latin Style</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Brown roast in oil in a large pot.</li>
+<li>Add sliced onions, green bell peppers, garlic, and cover with boiling water.</li>
+<li>Add 1 can tomato paste, 1 tablespoon Worcestershire sauce, 1 tablespoon soy sauce, 1 bay leaf, and simmer for 2 hours until nearly tender.</li>
+<li>Add carrots and cook until tender.</li>
+<li>Save extra sauce for paella or soup stock.</li>
+</ol>
+<h2 id="easy-chuck-roast"><a class="header" href="#easy-chuck-roast">Easy Chuck Roast</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Line baking pan with foil.</li>
+<li>Place chuck roast in, then pour over top one can cream of mushroom soup (undiluted) and one pack Lipton's dry onion soup mix.</li>
+<li>Slice some bell peppers and add 1/2 cup red wine (optional).</li>
+<li>Seal well with foil on top.</li>
+<li>Pinch edges to make airtight.</li>
+<li>Bake at 350 degrees for 2 1/2 hours.</li>
+</ol>
+<h2 id="stuffed-leg-of-lamb"><a class="header" href="#stuffed-leg-of-lamb">Stuffed Leg of Lamb</a></h2>
+<ul>
+<li>1 boned leg of lamb</li>
+<li>1 onion</li>
+<li>1 lb mushrooms (quartered)</li>
+<li>1 (12 oz) pack spinach souffle (Stouffer's)</li>
+<li>4 oz stuffing mix</li>
+<li>2 tablespoons butter</li>
+<li>3 tablespoons lemon juice</li>
+<li>Salt and pepper</li>
+<li>White wine to baste</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Rub lamb with minced garlic and sauté onion in butter.</li>
+<li>Add stuffing mix and lemon, and thawed spinach mix, salt, and pepper.</li>
+<li>Mix it all up with an egg and stuff into cavity.</li>
+<li>Roll and reshape by tying with twine.</li>
+<li>Cook on rack at 425 degrees for 20 minutes.</li>
+<li>Turn down and continue at 325 for another hour.</li>
+<li>Let rest for 15 minutes outside oven covered with foil before carving (meat thermometer should read 125-130 degrees before removing).</li>
+</ol>
+<h2 id="taco-meat"><a class="header" href="#taco-meat">Taco Meat</a></h2>
+<ul>
+<li>1 lb ground meat</li>
+<li>1 chopped onion</li>
+<li>1 green chili</li>
+<li>1 teaspoon Lowry's seasoned salt</li>
+<li>1 clove minced garlic</li>
+<li>1/4 teaspoon ground cumin</li>
+<li>1 teaspoon oregano</li>
+<li>1 teaspoon chili powder</li>
+<li>1 medium to large diced tomato</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Sauté meat. If using turkey, add oil to sauté and crumble.</li>
+<li>Add remaining ingredients and some salsa if desired.</li>
+</ol>
+<h2 id="gammie-thayers-baked-beans"><a class="header" href="#gammie-thayers-baked-beans">Gammie Thayer's Baked Beans</a></h2>
+<ul>
+<li>1 quart navy beans (cooked until the skins blow off)</li>
+<li>1/2 cup sugar</li>
+<li>1 chopped onion</li>
+<li>2 tablespoons baking soda</li>
+<li>1 teaspoon salt</li>
+<li>1 tablespoon vinegar</li>
+<li>1 tablespoon molasses</li>
+<li>3/4 lb salt pork (cubed)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Bake together in a bean pot.</li>
+</ol>
+<h2 id="new-orleans-style-red-beans"><a class="header" href="#new-orleans-style-red-beans">New Orleans Style Red Beans</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Sauté ham and sliced sausage, drain fat, and add chopped garlic, celery tops, and chopped carrot tops if available, and chopped onion.</li>
+<li>Bring red kidney beans to boil in salted water.</li>
+<li>Add ham bone and cook until meat falls off. If you don't have one, just skip that step.</li>
+<li>Add cubed ham and sausage and sautéed vegetables.</li>
+<li>Add more water when necessary, cook until beans are soft and liquid is creamy.</li>
+<li>Mash some beans if necessary.</li>
+<li>Check the salt and add if needed.</li>
+<li>Serve over cooked rice.</li>
+</ol>
+<h2 id="lentils-and-rice"><a class="header" href="#lentils-and-rice">Lentils and Rice</a></h2>
+<ul>
+<li>1 cup lentils</li>
+<li>5-6 medium onions (sliced)</li>
+<li>1 teaspoon salt</li>
+<li>3/4 cup olive oil</li>
+<li>3/4 cup rice</li>
+<li>7 cups water</li>
+<li>Parsley</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Cook lentils for 20 minutes, add rice, and cook for 15 minutes more.</li>
+<li>Meanwhile, cut onions into slices and sauté in oil until brown.</li>
+<li>Add onions and oil to lentils and rice and cook for 15 minutes more on low flame uncovered until all liquid is absorbed.</li>
+<li>Stir to prevent sticking and chill for 24 hours before serving.</li>
+<li>Good at room temperature.</li>
+</ol>
+<h2 id="cheese-grits"><a class="header" href="#cheese-grits">Cheese Grits</a></h2>
+<ul>
+<li>3 cups water</li>
+<li>1 cup uncooked grits</li>
+<li>1 cup sharp cheddar cheese</li>
+<li>1/2 teaspoon salt</li>
+<li>Paprika</li>
+<li>1/2 stick butter</li>
+<li>3 egg yolks</li>
+<li>Cayenne pepper to taste</li>
+<li>Garlic salt or powder</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Bring water to boil and add salt and grits.</li>
+<li>Simmer for 5 minutes.</li>
+<li>Add remaining ingredients with grated cheese.</li>
+<li>Mix well.</li>
+<li>Bake at 400 degrees for 30 minutes or 350 for 1 hour.</li>
+</ol>
+<h2 id="chili"><a class="header" href="#chili">Chili</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Cover beans with triple depth water and bring to boil. Let sit for an hour or so.</li>
+<li>Meanwhile, brown meat and crumble, drain fat. If using veal or turkey, you might need to add some oil.</li>
+<li>While meat is browning, add 2 cups diced onions, 1/2 cup diced celery, a chopped green pepper, and garlic to taste (use 4-5 cloves).</li>
+<li>Add this mix to beans with 1 1/2 teaspoons chili powder, 1/2 teaspoon oregano, 1/4 teaspoon cumin, 1 bay leaf, 2/3 cup crushed tomatoes, and 2/3 cup tomato puree.</li>
+<li>Add 2 packs instant chicken broth and seasoning mix or bouillon.</li>
+<li>Can use precooked canned beans, if so, use the equivalent of 24 ounces. If using dried beans, you may have to keep adding water.</li>
+<li>Cook on low heat, stir frequently.</li>
+<li>Add some jalapeno to taste and/or a can of salsa casera.</li>
+</ol>
+<h3 id="beef-ro-tel"><a class="header" href="#beef-ro-tel">Beef Ro-Tel</a></h3>
+<p>Instructions:</p>
+<ol>
+<li>Brown stew meat that has been dredged in flour with onions and garlic and salt.</li>
+<li>Pour over a can of Ro-Tel tomatoes.</li>
+<li>Season with oregano, bay leaf, and cover with dry red wine.</li>
+<li>Simmer until tender, 2-2 1/2 hours, adding more wine as needed.</li>
+<li>When tender, add a can of cream of mushroom soup or fresh mushrooms and heavy cream (use condensed skim milk).</li>
+<li>Correct salt and serve over rice.</li>
+<li>If Ro-Tel tomatoes are not available, use Mexican style tomatoes and hot peppers.</li>
+</ol>
+<h2 id="arroz-con-pollo"><a class="header" href="#arroz-con-pollo">Arroz Con Pollo</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Dice and sauté in a large skillet: 1/4 lb bacon or ham, 2 green peppers, 1 sweet pepper, 2 onions, 3-4 cloves garlic.</li>
+<li>Add 1/2 oz olives, 1/4 oz capers, 1 teaspoon oregano, accent, salt, and pepper.</li>
+<li>In another pan, brown chicken in olive oil. Remove chicken and sauté rice in drippings until rice is opaque.</li>
+<li>In a large baking pan or dish, place cooked vegetables from above, chicken and rice. Add twice the amount of liquid as rice. The liquid should be stale beer and chicken stock.</li>
+<li>Add a small can of tomato sauce and a small tomato paste. Mix so that all rice is covered and add frozen or canned tiny peas.</li>
+<li>Bake in oven at medium heat until all liquid is gone.</li>
+</ol>
+<h2 id="chicken-in-celery-sauce"><a class="header" href="#chicken-in-celery-sauce">Chicken in Celery Sauce</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Place raw chicken in a casserole.</li>
+<li>Spread over top one can of cream of celery soup.</li>
+<li>Sprinkle with parsley, paprika, salt, pepper, garlic salt.</li>
+<li>Cover and bake for 1 to 1 1/4 hours at 350 degrees.</li>
+</ol>
+<h2 id="chicken-in-a-bag"><a class="header" href="#chicken-in-a-bag">Chicken in a Bag</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Towel dry one fryer chicken.</li>
+<li>Slather inside and out with margarine.</li>
+<li>Season with garlic salt, pepper, and paprika.</li>
+<li>Place in a brown bag on a rack in a pan.</li>
+<li>Bag should be folded closed on the end.</li>
+<li>Bake for 1 to 1 1/4 hours depending on size at 425 degrees.</li>
+</ol>
+<h2 id="chicken-sesame"><a class="header" href="#chicken-sesame">Chicken Sesame</a></h2>
+<ul>
+<li>3 lb chicken (use breasts)</li>
+<li>Buttermilk</li>
+<li>1 cup butter</li>
+<li>1/2 teaspoon tarragon</li>
+<li>3 tablespoons lemon juice</li>
+<li>4 cups fine bread crumbs from dry bread</li>
+<li>1/4 cup parsley</li>
+<li>1/2 cup sesame seeds</li>
+<li>3 teaspoons seasoned salt</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Place chicken in a shallow pan, cover with buttermilk, and refrigerate overnight.</li>
+<li>Next day, pour off buttermilk and pat dry with paper towels.</li>
+<li>Melt butter and add tarragon, add lemon juice.</li>
+<li>Prepare bread crumbs in a blender, add parsley, sesame seeds, and seasoned salt.</li>
+<li>Dip chicken in butter and then crumbs.</li>
+<li>Arrange in dish and spoon any remaining butter over top.</li>
+<li>Cover tightly and refrigerate for 1 1/2 hours.</li>
+<li>Bake in a 350-degree oven without turning until golden and tender, about 1 1/2 hours, basting 2-3 times.</li>
+</ol>
+<h2 id="chicken-divine"><a class="header" href="#chicken-divine">Chicken Divine</a></h2>
+<ul>
+<li>2 cups margarine</li>
+<li>1 cup flour</li>
+<li>7 cups whole milk</li>
+<li>1 tablespoon salt</li>
+<li>1 small can tomato sauce</li>
+<li>1 tablespoon crushed red pepper</li>
+<li>2 teaspoons accent</li>
+<li>2 small crushed garlic cloves</li>
+<li>1/2 lb grated American cheese</li>
+<li>5 oz Gruyere cheese (grated)</li>
+<li>2 poached chickens</li>
+<li>5 large cans of mushrooms</li>
+<li>5 large cans of artichoke hearts (cut in half)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Melt margarine and stir in flour, cook for 3-4 minutes and stir in milk.</li>
+<li>Add salt, tomato sauce, crushed red pepper, accent, and crushed garlic cloves.</li>
+<li>Add grated American cheese and Gruyere cheese.</li>
+<li>Cook together until cheese melts, add meat from poached chickens, mushrooms, and artichoke hearts.</li>
+<li>Bake at 350 degrees until bubbling. Serves 20.</li>
+</ol>
+<h2 id="curried-chicken"><a class="header" href="#curried-chicken">Curried Chicken</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Sauté chopped onion in butter and flour.</li>
+<li>Add celery or seed, cooked chicken, curry powder, salt, pepper, chopped sour apple, and broth to make cream sauce.</li>
+<li>Serve with chopped peanuts, raisins, chutney, coconut, chopped egg, crumbled bacon, diced tomatoes, etc.</li>
+<li>Some like it hot, add white pepper and/or cayenne.</li>
+</ol>
+<h2 id="chicken-breasts-in-white-wine-sauce"><a class="header" href="#chicken-breasts-in-white-wine-sauce">Chicken Breasts in White Wine Sauce</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Pound breasts between waxed paper until thin and spread out.</li>
+<li>Dredge in flour and sauté in butter or margarine with garlic and chopped onions.</li>
+<li>Sprinkle with tarragon and cover with white wine (dry).</li>
+<li>Simmer until almost tender.</li>
+<li>Add sliced carrots, mushrooms, and thicken with cream and/or cornstarch.</li>
+<li>Correct salt.</li>
+<li>Add some frozen peas and serve over noodles or rice.</li>
+</ol>
+<h2 id="paella"><a class="header" href="#paella">Paella</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Measure juice from Latin style chuck roast and remove fat.</li>
+<li>Add juice from a can of tiny peas, bring to a boil and add half the measurement of rice.</li>
+<li>Stir and add shrimp, peas, capers, olives, and any other shellfish or chicken.</li>
+<li>Cook covered on low flame until rice is done.</li>
+</ol>
+<h2 id="shrimp-curry"><a class="header" href="#shrimp-curry">Shrimp Curry</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Sauté shrimp in butter until opaque.</li>
+<li>Add green onions, 1 can of cream of mushroom soup, a little water, a dash of Tabasco, 1 tablespoon Worcestershire sauce, and curry powder to taste.</li>
+<li>Add sliced hard-boiled eggs at the end and serve with rice and whatever condiments you like (raisins, peanuts, bacon bits, chopped onion, tomato, cucumbers, etc.). Chutney is a must.</li>
+</ol>
+<h2 id="boiled-shrimp"><a class="header" href="#boiled-shrimp">Boiled Shrimp</a></h2>
+<ul>
+<li>2 cans beer</li>
+<li>5 lbs shrimp (with tails on)</li>
+<li>1/2 cup salt</li>
+<li>1 quart vinegar</li>
+<li>1/4 cup black pepper</li>
+<li>1 teaspoon red pepper</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Bring to boil and add shrimp, bring back to boil and 5 minutes more.</li>
+<li>Serve with sauce made of brown butter, Worcestershire, and Tabasco.</li>
+</ol>
+<h2 id="oysters-mosca"><a class="header" href="#oysters-mosca">Oysters Mosca</a></h2>
+<ul>
+<li>2 jars oysters (drained)</li>
+<li>Lemon</li>
+<li>1 part Italian bread crumbs</li>
+<li>1/2 part Parmesan cheese</li>
+<li>Parsley</li>
+<li>Oregano</li>
+<li>Olive oil</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Squeeze lemon over and soak for 10 minutes.</li>
+<li>Roll the oysters in stuffing made with bread crumbs, Parmesan cheese, parsley, and oregano.</li>
+<li>Oil a baking dish and place breaded oysters side by side.</li>
+<li>Drizzle some olive oil on top and bake until brown at 350 degrees.</li>
+</ol>
+<h2 id="baked-fish---easy"><a class="header" href="#baked-fish---easy">Baked Fish - Easy</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Buy fillet of sole or trout or any good white fish.</li>
+<li>Butter a casserole dish and place fish (skin side down).</li>
+<li>Place chopped green onions, yogurt, or sour cream on top.</li>
+<li>Sprinkle with soy sauce and pepper, add 2 tablespoons white wine.</li>
+<li>Top with slivered almonds and bake at 350 degrees until bubbling.</li>
+</ol>
+<h2 id="shrimp-souffle"><a class="header" href="#shrimp-souffle">Shrimp Souffle</a></h2>
+<ul>
+<li>5 cups cooked rice</li>
+<li>2 cans sliced water chestnuts (drained)</li>
+<li>3/4 cup chopped celery</li>
+<li>1/4 cup chopped onions</li>
+<li>1 small can pimentos</li>
+<li>1/4 cup chopped parsley</li>
+<li>2-3 lbs cooked shrimp</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Cook rice and mix with above ingredients.</li>
+<li>Mix with the following sauce:</li>
+<li>Melt 1/4 lb butter and add 1/3 cup flour, cook for a few minutes and add a quart of milk slowly, stirring until it begins to thicken.</li>
+<li>Mix in 1 pint Best Foods or Hellmann's mayonnaise, salt, accent, 1 1/2 teaspoon curry powder, 1 teaspoon prepared mustard, 1 teaspoon horseradish, and 1 tablespoon lemon juice.</li>
+<li>Mix all and bake in large casserole dish for 30-40 minutes until bubbling.</li>
+<li>Might have to add a little milk. Serves 12.</li>
+</ol>
+<h2 id="broiled-shrimp"><a class="header" href="#broiled-shrimp">Broiled Shrimp</a></h2>
+<ul>
+<li>2 sticks margarine</li>
+<li>Lots of garlic (pressed)</li>
+<li>Oregano</li>
+<li>Black pepper</li>
+<li>Cayenne pepper</li>
+<li>1 tablespoon or more rosemary</li>
+<li>3 glugs of white wine</li>
+<li>Salt</li>
+<li>Parsley</li>
+<li>Dollop of catsup</li>
+<li>Juice of a lemon (can substitute olive oil for half of the margarine)</li>
+</ul>
+<p>Instructions:</p>
+<ol>
+<li>Heat above together and simmer on low for 20 minutes.</li>
+<li>Pour over shrimp in a broiler pan, allow to marinate until ready to cook.</li>
+<li>Broil on bottom or middle of oven, stir every couple of minutes to cook all shrimp evenly.</li>
+<li>Be sure to have French bread to dip in sauce.</li>
+</ol>
+<h2 id="oyster-artichoke-ramekins"><a class="header" href="#oyster-artichoke-ramekins">Oyster Artichoke Ramekins</a></h2>
+<p>Instructions:</p>
+<ol>
+<li>Boil artichokes for 45 minutes, scrape leaves, and dice hearts.</li>
+<li>Brown 1 1/2 tablespoons flour in 3 tablespoons butter.</li>
+<li>Add 3/4 teaspoon salt, 3/4 teaspoon pepper, 1/4 teaspoon hot sauce, 2 teaspoons paprika, 1/2 teaspoon thyme.</li>
+<li>Add 2 dozen oysters with their liquor, 1 tablespoon chopped pimento, and 1 teaspoon pressed garlic.</li>
+<li>Cook until oysters curl, add 1 oz sherry.</li>
+<li>Distribute into 4 ramekins and top with 3/4 cup bread crumbs.</li>
+<li>Dot with butter and heat in hot oven at 450 degrees until crumbs brown.</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="marinades.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="soups.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="marinades.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="soups.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
