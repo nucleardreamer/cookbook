@@ -88,7 +88,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html" class="active">Introduction</a></li><li class="chapter-item expanded "><a href="breakfast_baked.html"><strong aria-hidden="true">1.</strong> Breakfast and Baked Foods</a></li><li class="chapter-item expanded "><a href="egg_dishes.html"><strong aria-hidden="true">2.</strong> Egg Dishes</a></li><li class="chapter-item expanded "><a href="sauces.html"><strong aria-hidden="true">3.</strong> Sauces</a></li><li class="chapter-item expanded "><a href="marinades.html"><strong aria-hidden="true">4.</strong> Marinades and Dressings</a></li><li class="chapter-item expanded "><a href="entres_cassaroles.html"><strong aria-hidden="true">5.</strong> Entres and Cassaroles</a></li><li class="chapter-item expanded "><a href="soups.html"><strong aria-hidden="true">6.</strong> Soups</a></li><li class="chapter-item expanded "><a href="vegis.html"><strong aria-hidden="true">7.</strong> Vegetables</a></li><li class="chapter-item expanded "><a href="salads.html"><strong aria-hidden="true">8.</strong> Salads</a></li><li class="chapter-item expanded "><a href="partyfood_dips.html"><strong aria-hidden="true">9.</strong> Party Food and Dips</a></li><li class="chapter-item expanded "><a href="deserts.html"><strong aria-hidden="true">10.</strong> Deserts</a></li><li class="chapter-item expanded "><a href="confections.html"><strong aria-hidden="true">11.</strong> Confections</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html" class="active">Introduction</a></li><li class="chapter-item expanded affix "><li class="spacer"></li><li class="chapter-item expanded "><a href="breakfast_baked.html"><strong aria-hidden="true">1.</strong> Breakfast and Baked Foods</a></li><li class="chapter-item expanded "><a href="egg_dishes.html"><strong aria-hidden="true">2.</strong> Egg Dishes</a></li><li class="chapter-item expanded "><a href="sauces.html"><strong aria-hidden="true">3.</strong> Sauces</a></li><li class="chapter-item expanded "><a href="marinades.html"><strong aria-hidden="true">4.</strong> Marinades and Dressings</a></li><li class="chapter-item expanded "><a href="entres_cassaroles.html"><strong aria-hidden="true">5.</strong> Entres and Cassaroles</a></li><li class="chapter-item expanded "><a href="soups.html"><strong aria-hidden="true">6.</strong> Soups</a></li><li class="chapter-item expanded "><a href="vegis.html"><strong aria-hidden="true">7.</strong> Vegetables</a></li><li class="chapter-item expanded "><a href="salads.html"><strong aria-hidden="true">8.</strong> Salads</a></li><li class="chapter-item expanded "><a href="partyfood_dips.html"><strong aria-hidden="true">9.</strong> Party Food and Dips</a></li><li class="chapter-item expanded "><a href="deserts.html"><strong aria-hidden="true">10.</strong> Deserts</a></li><li class="chapter-item expanded "><a href="confections.html"><strong aria-hidden="true">11.</strong> Confections</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -173,8 +173,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="grandma-sues-cookbook"><a class="header" href="#grandma-sues-cookbook">Grandma Sues Cookbook</a></h1>
-<pre><code>FORWARD
+                        <pre><code>FORWARD
 
 I expect that any of you, my darling children, that try
 these recipes, will have questions because it is very
@@ -212,7 +211,7 @@ Love,
 <h2 id="note-from-flynn"><a class="header" href="#note-from-flynn">Note from Flynn</a></h2>
 <p>I did the best I could at transcribing these 130 recipes, extract meaning from the overuse of ellipsis, and rationalize some of the seemingly alchemical methods described by Sue Joffray.</p>
 <p>By writing these recipes into a (hopefully) human-readable format, this cook book might have lost a little bit of its soul. When you are reading through these, you won't be able to imagine her talking in your ear as much, but hopefully it will make you cook a little bit better... and not be confused.</p>
-<p>If there any mistakes you see, you can see the original scans of the cookbook <a href="original_cookbook.pdf">here</a></p>
+<p>If there any mistakes, or you want a little more flavor (no pun intended), you can see the original scans of the cookbook <a href="original_cookbook.pdf">here</a></p>
 
                     </main>
 
@@ -237,6 +236,22 @@ Love,
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

@@ -2,6 +2,8 @@
 
 [Introduction](../README.md)
 
+---
+
 - [Breakfast and Baked Foods](breakfast_baked.md)
 - [Egg Dishes](egg_dishes.md)
 - [Sauces](sauces.md)
