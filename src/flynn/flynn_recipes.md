@@ -66,7 +66,7 @@ Instructions:
 2. Entire process should take 1-2 minutes TOPS
 3. Refrigerate until ready to assemble the same day, not more than a day ahead though
 
-### The assembly and sauce (with pelminista)
+### The assembly (with pelminista)
 
 - Spray bottle of water, or a dish and pastry brush
 - Rolling pin, straight sided
