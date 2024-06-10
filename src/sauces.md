@@ -89,7 +89,7 @@ Instructions:
 
 Instructions:
 
-Simmer on low for 15 min. blend in 1/4 cup cream or milk
+1. Simmer on low for 15 min. blend in 1/4 cup cream or milk
 
 ## BBQ Sauce-Ribs or Pork Chops
 
@@ -120,8 +120,8 @@ Instructions:
 - 1 teaspoon oregano
 - 3-4 large toes garlic
 - 1 tablespoon parsley
-- dash tabasco
-- glob of catsup
+- Dash of tabasco
+- A glob of catsup
 - 1/4 cup white wine
 
 Instructions:

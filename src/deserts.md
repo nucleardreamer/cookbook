@@ -518,6 +518,9 @@ Instructions:
 
 ## Thayer's Famous Pecan Pie
 
+**Secret Recipe: Do not give away outside family.**
+_(Flynn: Sorry grandma - it's on the internet now)_
+
 - 3 eggs
 - 1 cup dark karo syrup
 - 1/2 cup sugar
@@ -529,9 +532,6 @@ Instructions:
 1. Bake in uncooked pie crust at 450°F for 15 minutes.
 2. Reduce heat to 300-350°F until set, about 30 minutes more.
 3. This is also very good with English walnuts.
-
-**Secret Recipe: Do not give away outside family.**
-_(Flynn: Sorry grandma - it's on the internet now)_
 
 ## Bread Pudding - Bon Ton
 
