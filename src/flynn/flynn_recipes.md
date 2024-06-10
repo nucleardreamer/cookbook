@@ -26,7 +26,7 @@ Meat options:
 Instructions:
 1. Mix everything in a bowl, keep in fridge for _minimum_ 30 minutes. Best is overnight!
 2. Grill, fry in a pan, or BBQ over medium-high heat - these cook quick, so probably no more a minute per side. Best is over an open flame on a grill, but cast iron grill pan or skillet will work too. Stir fry is the last option.
-3. Best served with ssamjang (korean dipping sauce), and garlic cloves in a lettuce wrap. But honestly it's great just by itself.
+3. Best served with [ssamjang](https://en.wikipedia.org/wiki/Ssamjang) (dipping sauce) and garlic cloves in a lettuce wrap. If you aren't into making korean food, it's best to buy that sauce from an asian market. Honestly, the bulgogi is great just by itself.
 
 ## Feta pasta bake
 
@@ -63,7 +63,7 @@ Instructions:
 - 1 cup(ish) beef broth
 - 1 tablespoon garlic, minced
 - 1 tablespoon mustard (not yellow crap)
-- 1/2 tablespoon Aji-no-moto (MSG, Flynn's preference)
+- 1/2 tablespoon [Aji-no-moto](https://www.ajinomoto.com/msg/what-is-aji-no-moto-and-how-is-it-made) (MSG, Flynn's preference)
 - Parmesan cheese, grated (garnish)
 - Parsley (garnish)
 - Spaghetti
