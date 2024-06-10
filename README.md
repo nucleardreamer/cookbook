@@ -37,7 +37,7 @@ Love,
 
 ## Note from Flynn
 
-I did the best I could at transcribing these 130 recipes, extract meaning from the overuse of ellipsis, and rationalize some of the seemingly alchemical methods described by Sue Joffray. 
+I did the best I could at transcribing these ~130 recipes, extract meaning from the overuse of ellipsis, and rationalize some of the seemingly alchemical methods described by Sue Joffray. 
 
 By writing these recipes into a (hopefully) human-readable format, this cook book might have lost a little bit of its soul. When you are reading through these, you won't be able to imagine her talking in your ear as much, but hopefully it will make you cook a little bit better... and not be confused.
 
