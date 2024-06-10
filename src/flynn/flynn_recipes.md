@@ -1,6 +1,6 @@
 # Flynn's Recipes
 
-I don’t have many special recipes, but the ones listed here are worth writing down. Some are mine, modified from my time in Japan and Korea, and some are part of the notebook my partner Hannah and I keep together.
+I don’t have many special recipes, but the ones listed here are worth writing down. Some are mine, modified from my time in Japan and Korea, and some are part of the cöökböök my partner Hannah and I keep together.
 
 ![Hannah and Flynn's Cookbook](flynn_book.png "Hannah and Flynn's Cookbook")
 
@@ -54,7 +54,7 @@ Instructions:
 7. After cooking, zest with lemon and add in the pasta water
 8. Smash the whole thing up and mix it around, garnish with basil
 
-## French Onion Spaghetti
+## French Onion Spaghetti (aka the Hannah special)
 
 - 2 tablespoons butter
 - 2 yellow onions, sliced
