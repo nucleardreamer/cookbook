@@ -8,12 +8,12 @@ I don’t have many special recipes, but the ones listed here are worth writing 
 
 Do not skip on any of these ingredients, the recipe done right needs all these things!
 
-- 1/2 cup of crushed Korean pear (or asian pears specifically)
+- 1/2 cup of crushed Korean pear (or asian pears specifically, find at an asian market)
 - 1/4 cup onion puree
 - 4 cloves garlic, minced
 - 1 teaspoon ginger, minced
 - 1 green onion, chopped
-- 2 tablespoon brown sugar (or 1 tablespoons of brown sugar and 1+1/2 tablespoons rice syrup)
+- 2 tablespoon brown sugar
 - 2 tablespoon soy sauce
 - a pinch of ground black pepper
 - 1 tablespoon toasted sesame oil
@@ -24,7 +24,7 @@ Meat options:
 - (decent) 1 pound beef short ribs, thin sliced into strips 1/2 inch wide
 
 Instructions:
-1. Mix everything in a bowl, keep in fridge for _minimum_ 30 minutes. Best is overnight!
+1. Mix everything in a bowl, keep in fridge overnight. If you are in a pinch, keep in fridge for _minimum_ 30 minutes. 
 2. Grill, fry in a pan, or BBQ over medium-high heat - these cook quick, so probably no more a minute per side. Best is over an open flame on a grill, but cast iron grill pan or skillet will work too. Stir fry is the last option.
 3. Best served with [ssamjang](https://en.wikipedia.org/wiki/Ssamjang) (dipping sauce) and garlic cloves in a lettuce wrap. If you aren't into making korean food, it's best to buy that sauce from an asian market. Honestly, the bulgogi is great just by itself.
 
