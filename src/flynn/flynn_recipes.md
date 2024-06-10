@@ -98,6 +98,17 @@ Instructions:
 4. Mix the softened butter and vinegar in a bowl, and toss with the pelminis.
 5. Put on garnishes and a healthy dollop of smetana/sour cream
 
+### Bonus: Smetana recipe
+
+- 1 quart heavy whipping cream
+- 1/8 teaspoon 901 buttermilk and sour cream culture (or 1/4 cup buttermilk)
+
+Instructions:
+1. Bring heavy cream to room temp, and mix with the culture
+2. Let mixture sit out at room temp, loosely covered for 12 hours
+3. Transfer container to fridge for 12 hours, and then return to room temp to finish.
+4. 10-18 hours, depending on temp, is done when it has thickened. Store in fridge
+
 ---
 
 ## Feta pasta bake
