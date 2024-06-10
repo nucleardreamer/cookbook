@@ -88,10 +88,15 @@ Instructions:
 1. Beat until stiff, 6 egg whites adding sugar, cream of tartar, and vinegar gradually.
 2. Turn the oven almost out and bake for 2 hours or bake in a 300-degree oven for 40 minutes if a softer confection is desired.
 
-## Alternate Recipe (Gammie’s Writing)
+### Alternate Recipe (Gammie’s Writing)
+
+- 6 egg whites
+- Add 2 cups sugar
+- 1 teaspoon cream of tartar
+- 1 teaspoon vinegar
 
 Instructions:
-1. Beat until very stiff, 6 egg whites adding 2 cups sugar and 1 teaspoon cream of tartar, and 1 teaspoon vinegar gradually.
+1. Beat until very stiff, add ingredients in gradually
 2. Turn the oven almost out and bake for 2 hours or bake in a 300-degree oven for 40 minutes if a softer confection is desired.
 
 ## Chocolate Mousse (Aunt Eleanor’s)
@@ -241,22 +246,6 @@ Instructions:
 2. Stir while cooking in a double boiler until thick. Cool and add vanilla.
 3. Optional: add chopped nuts or 1 tablespoon rum, sherry, etc.
 
-## Bread Pudding (Aunt Eleanor)
-
-- 3 slices white bread, buttered and cubed
-- 3/4 cup brown sugar
-- 2/3 cup raisins or currants
-- 3 eggs
-- 2 1/2 cups milk
-- 2 teaspoons vanilla
-
-Instructions:
-1. Put sugar in the top portion of a double boiler.
-2. Sprinkle raisins on top of sugar, then bread cubes.
-3. Beat eggs in a bowl and add milk and vanilla.
-4. Pour over all. Bring water in the bottom of the double boiler to a simmer.
-5. Cover with lid and cook for 1 hour. DO NOT PEEK!
-
 ## Hot Milk Sponge Cake
 
 Favorite of my father, made by my grandmother Phillips
@@ -349,7 +338,7 @@ Instructions:
 2. Spray bundt or angel pan with pan. Cook at 325 degrees for 1 hour.
 3. Cool 1/2 hour in the pan. Pour glaze into the pan.
 
-## Glaze
+### Glaze
 
 - 1 stick butter
 - 1 cup sugar
@@ -379,7 +368,7 @@ Instructions:
 3. Cut wax paper to line pans (I use three layers).
 4. Bake at 350 degrees for 40 minutes. Cool and frost.
 
-## Frosting
+### Frosting
 
 - 3/4 stick soft butter
 - 1 box powdered sugar
@@ -401,7 +390,7 @@ Instructions:
 2. Soak 1/3 cup poppy seeds in 1/2 cup water for 2 hours. Drain and add to the cream mixture as follows.
 3. Set aside. Cream until fluffy and add poppy seeds.
 
-## Cake
+### Cake
 
 - 2 1/2 cups cake flour or 2 cups all-purpose flour
 - 2 teaspoons baking powder
@@ -413,3 +402,182 @@ Instructions:
 2. Use custard filling between layers and finish with cooked white frosting.
 3. This is an old German recipe from Delma Aust. Hint: let the batter stand in the pan for 20 minutes before baking to avoid cracking.
 4. Bake at 350 degrees for 30 to 35 minutes.
+
+## Bananas Foster
+
+- 2 teaspoons butter
+- 4 teaspoons brown sugar
+- 2 bananas
+- 1 ounce rum or brandy
+- 1 teaspoon banana liqueur
+
+Instructions:
+1. Mix butter and sugar in a pan
+2. Add bananas sliced lengthwise and cook until tender
+3. Add cinnamon and liqueur, stir
+4. Add brandy to top
+5. **DO NOT STIR**
+6. Light flame and spoon over vanilla ice cream
+
+## Coffee Dessert
+
+- 2 cups leftover strong coffee
+- 2 tablespoons unflavored gelatin
+- A dash of coffee liqueur
+
+Instructions:
+1. Form and cut into cubes.
+2. Serve in glasses with melted ice cream on top.
+
+## Berry Cobbler
+
+- 1 cup flour mixed with 2 teaspoons baking powder
+- A pinch of salt
+- 1/2 cup milk
+- 5 cups fruit
+- 2 tablespoons butter
+- Sugar to sweeten
+
+Instructions:
+1. Place flour mixture in a baking dish.
+2. Place fruit, butter, and sugar in a saucepan.
+3. Bring to a boil.
+4. Pour over batter in the dish.
+5. Bake at 400°F for 20-30 minutes.
+
+## Freezer Dessert
+
+- 1 cup cottage cheese
+- 1 1/2 cups sour cream
+- 1 1/2 cups powdered sugar
+- 1/2 teaspoon vanilla
+
+Instructions:
+1. Blend until smooth in a blender.
+2. Pour into muffin cups and freeze.
+3. Serve with sweetened raspberries.
+
+## Yolk Sponge Cake
+
+- 3 cups all-purpose flour
+- 3 teaspoons baking powder
+- 1 teaspoon salt
+- 2 teaspoons lemon extract
+- 12 egg yolks (one cup)
+- 2 cups sugar
+- 1 cup hot water
+
+Instructions:
+1. Sift flour and baking powder together 4 times.
+2. Beat egg yolks until lemon colored.
+3. Add sugar and hot water a little at a time alternately, beating thoroughly after each addition.
+4. Add flour mixture about 1/4 at a time, beating thoroughly.
+5. Pour batter into a loose-bottom tube pan with ungreased paper lining the bottom.
+6. Bake for 1 hour at 350°F.
+
+## Crazy Chocolate Cake (Gammie's)
+
+- 1 1/2 cups flour
+- 1 cup sugar
+- 1/2 teaspoon salt
+- 3 tablespoons unsweetened cocoa
+- 1 teaspoon soda
+- 1 teaspoon vinegar
+- 6 tablespoons melted shortening
+- 1 teaspoon vanilla
+
+Instructions:
+1. Sift together flour, sugar, salt, cocoa, and soda into a 10-inch ungreased baking pan.
+2. Make 3 depressions.
+3. In one put vinegar, into another put shortening, and into the third put vanilla.
+4. Pour cold water over all and mix with a fork.
+5. Do not beat.
+6. Bake in a 350°F oven.
+7. Spread with either white or chocolate icing.
+
+## Candied Figs
+
+- 5 pounds figs
+- 2 cups sugar
+- 3/4 cup water
+- 2 tablespoons salt
+
+Instructions:
+1. Prick figs with a fork.
+2. Put into a 2-quart pan.
+3. Pour boiling water with salt over.
+4. Let stand 10 minutes, then drain.
+5. Combine sugar and water.
+6. Cook slowly for 1 1/2 hours with the lid on.
+7. Let boil before timing that 1 1/2 hours.
+8. Pour over figs and refrigerate overnight with the lid on.
+9. Simmer figs 1 hour uncovered.
+10. Repeat simmering process on the second and third days.
+11. Spread out on racks and cover with cheesecloth outside in the sun for 3 days (bring in at night).
+12. Roll in granulated sugar and store in a tin with waxed paper or freeze.
+
+## Thayer's Famous Pecan Pie
+
+- 3 eggs
+- 1 cup dark karo syrup
+- 1/2 cup sugar
+- 1/2 cup soft butter
+- 1 teaspoon vanilla
+- 1 cup pecans
+
+Instructions:
+1. Bake in uncooked pie crust at 450°F for 15 minutes.
+2. Reduce heat to 300-350°F until set, about 30 minutes more.
+3. This is also very good with English walnuts.
+
+**Secret Recipe: Do not give away outside family.**
+_(Flynn: Sorry grandma - it's on the internet now)_
+
+## Bread Pudding - Bon Ton
+
+- 1 loaf dry hard French bread
+- 1 quart milk
+- 2 cups sugar
+- 2 tablespoons vanilla
+- 3 eggs
+- 1/3 cup margarine
+- 1 cup raisins
+
+Instructions:
+1. Soak bread in milk.
+2. Crush and mix.
+3. Add beaten eggs, sugar, vanilla, and raisins.
+4. Stir.
+5. Melt margarine in a pan.
+6. Pour in the mixture and bake until firm.
+7. Cool and cut into cube servings.
+8. Add sauce before serving and heat under broiler in individual dishes.
+
+### Sauce:
+- 1 stick butter
+- 1 cup sugar
+- 1 egg
+- 1/2 cup whiskey
+
+Instructions:
+1. Cream butter and sugar and butter in a double boiler until dissolved and very hot.
+2. Add beaten egg and whip very fast so the egg doesn't curdle.
+3. Cool and add whiskey to taste (1/4 - 1/2 cup).
+
+## Bread Pudding - Aunt Eleanor
+
+- 3 slices white bread, buttered and cubed
+- 3/4 cup brown sugar
+- 2/3 cup raisins or currants
+- 3 eggs
+- 2 1/2 cups milk
+- 2 teaspoons vanilla
+
+Instructions:
+1. Put sugar in the top portion of a double boiler.
+2. Sprinkle raisins on top of the sugar.
+3. Then bread cubes.
+4. Beat eggs in a bowl and add milk and vanilla.
+5. Pour over all.
+6. Bring water in the bottom of the double boiler to a simmer.
+7. Cover with lid and cook for 1 hour. **DO NOT PEEK!**
