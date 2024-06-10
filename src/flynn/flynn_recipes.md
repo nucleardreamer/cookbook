@@ -28,6 +28,78 @@ Instructions:
 2. Grill, fry in a pan, or BBQ over medium-high heat - these cook quick, so probably no more a minute per side. Best is over an open flame on a grill, but cast iron grill pan or skillet will work too. Stir fry is the last option.
 3. Best served with [ssamjang](https://en.wikipedia.org/wiki/Ssamjang) (dipping sauce) and garlic cloves in a lettuce wrap. If you aren't into making korean food, it's best to buy that sauce from an asian market. Honestly, the bulgogi is great just by itself.
 
+---
+
+## Siberian Pelminis (сибирские пельмени)
+
+After a trip to Moscow I fell in love with a number of eastern european dishes, but one of the standouts were dumplings. Credit for this mainly goes to [Kachka](https://www.kachkapdx.com/) in portland, but I have my own version here. You will really want to have a kitchenaid for the dough, and a [pelminista](https://www.etsy.com/market/pelmeni_mold) makes the whole process WAY easier. I highly recommend the ~$10 investment, you can find these on Amazon easily as well. If you don't have a pelminista, you can follow along and roll/cut/fill dumplings by hand, but I can't guarantee the timing in this recipe will work.
+
+**Instructional video:**
+
+[![instructional video](https://img.youtube.com/vi/FrqyZp_mcbY/0.jpg)](https://youtube.com/shorts/FrqyZp_mcbY)
+
+### The dough
+
+- 3 1/2 cups all-purpose flower
+- 1 tablespoon kosher salt (crush flakes down to be fine grained)
+- 1 large egg
+- 3/4 cup plus 2 tablespoons cold water
+
+Instructions:
+1. In a bowl or stand mixer (w/ dough hook) mix flour and salt
+2. Add egg and _slowly_ drizzle in the water
+3. Mix until dough forms, and then kneed for 10 minutes until the dough comes together in a smooth elastic ball. If you don't have a mixer, do it by hand but kneed for 20 minutes
+4. Wrap in plastic wrap and container, let it sit at room temp for at least 1 hour. Don't put it in the fridge!
+
+### The filling
+
+- 1/2 pound ground beef
+- 1/2 pound ground pork
+- 1/2 pound ground veal
+- 1/2 onion, finely grated (include liquid)
+- 2/3 cup ice water
+- 1 tablespoon + 1 teaspoon koshur salt
+
+Instructions:
+
+1. Put everything in a bowl on a stand mixer with paddle attachment, mix until it comes together. You are looking for the fat to emulsify which will incorporate all of the ice water and onion liquit and coat everything with a nice far sheen. If you stop the mixer and grab a pinch, it should stick to your fingers with a very tacky feel. Over/under doing it will make a dry meat
+2. Entire process should take 1-2 minutes TOPS
+3. Refrigerate until ready to assemble the same day, not more than a day ahead though
+
+### The assembly and sauce (with pelminista)
+
+- Spray bottle of water, or a dish and pastry brush
+- Rolling pin, straight sided
+- Rimmed baking sheet
+- Pastry piping bag (recommended)
+
+Instructions:
+1. Divide the dough into 8 equal balls, and dust baking sheet and pelminista with flour
+2. With one ball, dust flour on counter and roll out a circle slightly bigger than the pelminista. Cover the other balls with a dish towel so they dont dry out.
+3. Drape on top of pelminista, pat the dough lightly so you see the imprint, and push down holes a little bit to make room for the filling.
+4. With a pastry bag (or two spoons), fill all 37 spots with a heaping tablespoon worth of filling, dont get carried away with too much!
+5. Roll out a second dough ball, and lightly spray the dough on the pelminista and edges while you drape the top on.
+6. Use rolling pin several times to seal the dumplings and create perforations from the pelminista.
+7. Turn it upside down over the baking sheet nudge the dumplings out, making sure they don't stick together
+8. Repeat with the rest of the dough / fillings. You can cook now, or freeze on the baking sheet and then transfer to a bag. Freeze first or they will stick together
+
+### Cooking the dumplings
+
+- 1 tablespoon butter
+- 1 teaspoon white wine vinegar
+- [Smetana](https://en.wikipedia.org/wiki/Smetana_(dairy_product)), or just sour cream
+- A pinch of kosher salt
+- Garnish of parsley, chervil, or chives
+
+Instructions:
+1. Bring a large pot of salted water to boil. 
+2. Add ~15-20 dumplings per person. Adjust the heat to get a healthy, but not super vigorous boil. Give it a few stirs so they dont stick to the bottom or each other
+3. Cook dumplings until they rise to the surface, plus 1 more minute. Skim out from top and drain in a colander.
+4. Mix the softened butter and vinegar in a bowl, and toss with the pelminis.
+5. Put on garnishes and a healthy dollop of smetana/sour cream
+
+---
+
 ## Feta pasta bake
 
 You will want to use a cassarole dish for this, like 3 inches deep
@@ -118,7 +190,6 @@ Instructions:
 2. Add salt, pepper, wine and butter
 3. Stir for 2 minutes
 4. Add pasta, shallots, and any other protein - manilla clams are a favorite
-
 
 ## Roasted brussel sprouts
 
