@@ -15,3 +15,7 @@
 - [Party Food and Dips](partyfood_dips.md)
 - [Deserts](deserts.md)
 - [Confections](confections.md)
+
+---
+
+- [Flynn's Recipes](flynn/flynn_recipes.md)
