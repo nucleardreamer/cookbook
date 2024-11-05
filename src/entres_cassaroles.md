@@ -170,7 +170,38 @@ Instructions:
 
 ## New Orleans Style Red Beans
 
+- 1 lb dried red kidney beans
+- Water, to cover the beans
+- 3 1⁄2 lbs ham hocks
+- 16 cups water
+- 2 1⁄2 cups celery, finely chopped
+- 2 cups onions, finely chopped
+- 2 cups green bell peppers, finely chopped
+- 5 bay leaves
+- 2 teaspoons white pepper
+- 2 teaspoons dried thyme leaves
+- 1 1⁄2 teaspoons garlic powder
+- 1 1⁄2 teaspoons dried oregano leaves
+- 1 teaspoon cayenne
+- 1⁄2 teaspoon black pepper
+- 1 tablespoon Tabasco sauce
+- 1lb andouille sausage, cut diagonally into 3/4-inch pieces
+
 Instructions:
+1. Cover the beans with water 2" above beans.
+2. Let stand overnight.
+3. Drain just before using.
+4. Place the ham hocks, 10 cups of the water, celery, onions, bell peppers, bay leaves, and seasonings in a 5.5 qt saucepan or large Dutch oven; stir well.
+5. Cover and bring to a boil over high heat.
+6. Reduce heat and simmer until meat is fork tender, about 1 hour, stirring occasionally.
+7. Remove ham hocks from pan and set aside.
+8. Add the drained beans and 4 cups of the water to the pan; bring to a boil, reduce the heat, and simmer 30 minutes, stirring occasinally. Add the remaining 2 cups of water and simmer 30 minutes, stirring often.
+9. Stir in the Andouille and continue simmering until the beans start breaking up, about 35 minutes, scraping the bottom of the pan fairly often.
+10. *If the beans start to scorch, do not stir. Immediately remove from heat and change to another pot without scraping any of the scorched beans into the new mixture.
+11. Add the ham hocks and cook and stir 10 minutes more.
+12. Serve immediately over hot, white rice.
+
+Grandma's Original Instructions:
 1. Sauté ham and sliced sausage, drain fat, and add chopped garlic, celery tops, and chopped carrot tops if available, and chopped onion.
 2. Bring red kidney beans to boil in salted water.
 3. Add ham bone and cook until meat falls off. If you don't have one, just skip that step.
