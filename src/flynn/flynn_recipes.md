@@ -139,15 +139,17 @@ Instructions:
 
 ## French Onion Spaghetti (aka the Hannah special)
 
-- 2 tablespoons butter
+- 4 tablespoons butter
 - 2 yellow onions, sliced
 - 2 shallots, sliced
+- 2 tablespoons oil (olive oil)
 - 3/4 cup red wine
 - 1 cup(ish) beef broth
 - 1 tablespoon garlic, minced
 - 1 tablespoon mustard (not yellow crap)
 - 1/2 tablespoon [Aji-no-moto](https://www.ajinomoto.com/msg/what-is-aji-no-moto-and-how-is-it-made) (MSG, Flynn's preference)
-- Parmesan cheese, grated (garnish)
+- Garnish of Parmesan cheese, grated (garnish)
+- 1 cup of Gruyère cheese
 - Parsley (garnish)
 - Spaghetti
 
@@ -155,8 +157,8 @@ Instructions:
 1. Mix onions and butter in pan and cook until transparent and slightly brown
 2. While onions are cooking, fry shallots in a shallow pan with oil and set on paper towel to rest
 3. Once onions are browned add wine, beef broth, mustard and reduce for about 30 minutes
-4. Cook pasta and combine with reduced sauce
-5. Garnish with fried shallots, parseley, cheese
+4. Cook pasta and combine with reduced sauce, add in Gruyère
+5. Garnish with fried shallots, parseley, parmesan cheese
 6. Add more cheese if needed!
 
 ## Steak sandwich
