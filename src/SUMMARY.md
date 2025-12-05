@@ -19,3 +19,4 @@
 ---
 
 - [Flynn's Recipes](flynn/flynn_recipes.md)
+- [Richards's Recipes](richard/richard_recipes.md)
