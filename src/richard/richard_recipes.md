@@ -78,5 +78,5 @@
 - [King Arthur Organic Bread Flour](https://shop.kingarthurbaking.com/items/organic-bread-flour)
 - [Sourdough starter (Amazon)](https://a.co/d/ik7QW2T)
 - [Glass jar (Amazon)](https://a.co/d/0SzIxdR)
-- [Thermostat controller (example Inkbird ITC-308)](https://a.co/d/7Qk0z9t)
-- [Bread scoring lame (Amazon)](https://a.co/d/28REi4B)
+- [Thermostat controller (example Inkbird ITC-308)](https://a.co/d/4pHZnWo)
+- [Bread scoring lame (Amazon)](https://a.co/d/26R9aGt)
